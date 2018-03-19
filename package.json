@@ -4,6 +4,8 @@
   "description": "Dating app for cmd",
   "main": "index.js",
   "scripts": {
+    "nmstart": "nodemon server",
+    "gulprun": "src/gulpfile.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +19,11 @@
   },
   "homepage": "https://github.com/Denniswegereef/dating-app#readme",
   "devDependencies": {
+    "gulp": "^3.9.1",
     "nodemon": "^1.17.2"
+  },
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.3"
   }
 }
