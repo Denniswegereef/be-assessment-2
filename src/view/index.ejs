@@ -1,7 +1,11 @@
-<%- include('head.ejs'); %>
+<%- include('component/head.ejs'); %>
+<%- include('component/header.ejs'); %>
 
-<h1>Test</h1>
-<a href="login">Login</a>
+<main class="container">
+    <h1>Index</h1>
+    <p><%=user %></p>
+</main>
 
-<%- include('footer.ejs'); %>
+<%- include('component/footer.ejs'); %>
+
 

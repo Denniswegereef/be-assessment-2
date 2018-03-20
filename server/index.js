@@ -8,12 +8,25 @@ module.exports = express()
 .use(express.static('static'))
 .get('/', home)
 .get('/login', login)
+.get('/register', register)
+.get('/dashboard', dashboard)
 .listen(8080)
 
 function home(req, res) {
-    res.render('index.ejs')
+    var person = {
+        user: "Dennis Wegereef"
+    }
+    res.render('index.ejs', person)
 }
 
 function login(req, res) {
-    res.render('log-in/log-in.ejs')
+    res.render('front/log-in.ejs')
+}
+
+function register(req, res) {
+    res.render('front/register.ejs')
+}
+
+function dashboard(req, res) {
+    res.render('dashboard/dashboard.ejs')
 }

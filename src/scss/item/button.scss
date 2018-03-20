@@ -1,0 +1,9 @@
+.button {
+  background-color: red;
+  padding: 20px;
+  margin-top: 40px;
+  &:hover {
+    background-color: blue;
+    color: white;
+  }
+}
