@@ -1,0 +1,18 @@
+<%- include('../component/head.ejs'); %>
+<%- include('../component/header.ejs'); %>
+
+<main class="container">
+    <h1>Add user</h1>
+    <form action="/adduser" method="post">
+    <label><input name='naam' type="text" placeholder="Dennis">Naam</label><br>
+    <label><input name='achternaam' type="text" placeholder="Wegereef">Achtergrond</label><br>
+
+        <label><input type="radio" name="gender" value="male"> Male</label>
+        <label><input type="radio" name="gender" value="female"> Female</label>
+        <br>
+    <button>Submit</button>
+    </form>
+</main>
+
+<%- include('../component/footer.ejs'); %>
+

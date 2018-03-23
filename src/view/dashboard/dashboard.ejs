@@ -1,7 +1,25 @@
 <%- include('../component/head.ejs'); %>
 <%- include('../component/header.ejs'); %>
+
 <main class="container">
     <h1>Dashboard</h1>
+    <br><br>
+    <h1>Males</h1>
+    <% datas.forEach(function (user) {  %>
+    <% if (user.gender === 'male'){ %>
+    <h2><%= user.naam %></h2>
+    <h3><%= user.achternaam %></h3>
+    <br>
+    <% }}) %>
+
+    <h1>Females</h1>
+    <% datas.forEach(function (user) {  %>
+    <% if (user.gender === 'female'){ %>
+    <h2><%= user.naam %></h2>
+    <h3><%= user.achternaam %></h3>
+    <br>
+    <% }}) %>
 </main>
+
 <%- include('../component/footer.ejs'); %>
 
