@@ -5,6 +5,8 @@ var mongo = require('mongodb')
 
 var bodyParser = require('body-parser')
 
+var argon2 = require('argon2')
+var session = require('express-session')
 require('dotenv').config()
 
 var db = null
@@ -20,12 +22,19 @@ module.exports = express()
 .set('views', 'src/view')
 .use(express.static('static'))
 .use(bodyParser.urlencoded({extended: true}))
+.use(session({
+    resave: false,
+    saveUninitialized: true,
+    secret: process.env.SESSION_SECRET
+}))
 
 .get('/', home)
+
 .get('/login', login)
+.post('/loginUser', login)
 
 .get('/register', register)
-.post('registerUser', registerUser)
+.post('/registerUser', registerUser)
 
 .get('/dashboard', dashboard)
 
@@ -92,6 +101,40 @@ function register(req, res) {
     res.render('front/register.ejs')
 }
 
-function registerUser(req, res) {
-    console.log(req.body)
+function registerUser(req, res, next) {
+    var username = req.body.username
+    var password = req.body.password
+    var min = 8
+    var max = 160
+
+    if (!username || !password){
+        console.log('Username or password are missing')
+        return
+    }
+    if (password.length < min || password.length > max) {
+        console.log('Password must be between ' + min +
+            ' and ' + max + ' characters')
+
+        return
+    }
+
+    argon2.hash(password).then(onhash, next)
+
+    function onhash(hash) {
+        var dbUsers = db.collection('users')
+
+        var user = {
+            username: req.body.username,
+            password: hash
+        }
+
+        dbUsers.insertOne(user, function (error, response) {
+            if (error) {
+                console.log('Error occurred while inserting')
+                // return
+            } else {
+                res.redirect('/')
+            }
+        })
+    }
 }

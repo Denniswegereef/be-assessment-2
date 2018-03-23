@@ -1,15 +1,17 @@
 <%- include('../component/head.ejs'); %>
 <%- include('../component/header.ejs'); %>
+
 <main class="container">
     <h1>Register</h1>
     <form action="/registerUser" method="post">
         <fieldset>
             <legend>Register</legend>
-            <input type="text" placeholder="email"><br>
-            <input type="password"><br>
+            <input type="text" placeholder="email" name="username"><br>
+            <input type="password" name="password"><br>
             <button>Submit</button>
         </fieldset>
     </form>
 </main>
+
 <%- include('../component/footer.ejs'); %>
 
