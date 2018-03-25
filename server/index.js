@@ -7,6 +7,7 @@ var bodyParser = require('body-parser')
 
 var argon2 = require('argon2')
 var session = require('express-session')
+
 require('dotenv').config()
 
 var db = null
@@ -31,7 +32,7 @@ module.exports = express()
 .get('/', home)
 
 .get('/login', login)
-.post('/loginUser', login)
+.post('/loginUser', loginUser)
 
 .get('/register', register)
 .post('/registerUser', registerUser)
@@ -46,13 +47,12 @@ module.exports = express()
 .listen(8080)
 
 function home(req, res, next) {
-    res.render('index.ejs')
-}
+    var  data = {
+        name: 'dennis'
+    }
 
-function login(req, res) {
-    res.render('front/log-in.ejs')
+    res.render('index.ejs', data)
 }
-
 
 function dashboard(req, res) {
     db.collection('users').find().toArray(done)
@@ -137,4 +137,42 @@ function registerUser(req, res, next) {
             }
         })
     }
+}
+
+
+function login(req, res) {
+    res.render('front/log-in.ejs')
+}
+
+function loginUser(req, res, next) {
+    var currentUser = req.body.username
+    var password = req.body.password
+
+    console.log(req.body.username)
+
+    if (!currentUser || !password) {
+        // Status 400
+        console.log('Username or password are missing')
+        return
+    }
+
+    var dbUsers = db.collection('users')
+
+    dbUsers.findOne({username: currentUser}, function (err, user) {
+        if(err) {
+            // error
+            console.log('error with db')
+        } else {
+            argon2.verify(user.password, password)
+            .then(onverify)
+        }
+        function onverify(match) {
+            if (match) {
+                res.redirect('/dashboard')
+            } else {
+                console.log('password incorrect')
+            }
+        }
+
+    })
 }
