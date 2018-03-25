@@ -44,17 +44,27 @@ module.exports = express()
 
 .get('/user/:id', getUser)
 
+.get('/log-out', logout)
+
+
 .listen(8080)
 
 function home(req, res, next) {
-    var  data = {
+    let data = {
         name: 'dennis'
     }
 
-    res.render('index.ejs', data)
+    res.render('index.ejs', {
+        user: req.session.user
+    })
 }
 
 function dashboard(req, res) {
+    if (!req.session.user) {
+        res.render('dashboard/error.ejs')
+        return
+    }
+
     db.collection('users').find().toArray(done)
 
     function done(err, data) {
@@ -62,11 +72,12 @@ function dashboard(req, res) {
             console.log('error')
             next(err)
         } else {
-            var users = {
-                datas: data
-            }
+
             // console.log(users)
-            res.render('dashboard/dashboard.ejs', users)
+            res.render('dashboard/dashboard.ejs', {
+                datas: data,
+                user: req.session.user
+            })
         }
     }
 }
@@ -98,16 +109,18 @@ function getUser(req, res) {
 
 
 function register(req, res) {
-    res.render('front/register.ejs')
+    res.render('front/register.ejs', {
+        user: req.session.user
+    })
 }
 
 function registerUser(req, res, next) {
-    var username = req.body.username
+    var username = req.body.email
     var password = req.body.password
     var min = 8
     var max = 160
 
-    if (!username || !password){
+    if (!username || !password) {
         console.log('Username or password are missing')
         return
     }
@@ -124,7 +137,14 @@ function registerUser(req, res, next) {
         var dbUsers = db.collection('users')
 
         var user = {
-            username: req.body.username,
+            username: username,
+            name: {
+                first: req.body.nameFirst,
+                last: req.body.nameLast
+            },
+            info: {
+                gender: req.body.gender
+            },
             password: hash
         }
 
@@ -133,7 +153,8 @@ function registerUser(req, res, next) {
                 console.log('Error occurred while inserting')
                 // return
             } else {
-                res.redirect('/')
+                req.session.user = {username: username}
+                res.redirect('/dashboard')
             }
         })
     }
@@ -141,14 +162,14 @@ function registerUser(req, res, next) {
 
 
 function login(req, res) {
-    res.render('front/log-in.ejs')
+    res.render('front/log-in.ejs', {
+        user: req.session.user
+    })
 }
 
 function loginUser(req, res, next) {
     var currentUser = req.body.username
     var password = req.body.password
-
-    console.log(req.body.username)
 
     if (!currentUser || !password) {
         // Status 400
@@ -159,20 +180,33 @@ function loginUser(req, res, next) {
     var dbUsers = db.collection('users')
 
     dbUsers.findOne({username: currentUser}, function (err, user) {
-        if(err) {
+        if (err) {
             // error
             console.log('error with db')
         } else {
             argon2.verify(user.password, password)
             .then(onverify)
         }
+
         function onverify(match) {
             if (match) {
+                console.log('Ingelogd op ' + user.username)
+                req.session.user = {username: user.username}
                 res.redirect('/dashboard')
             } else {
                 console.log('password incorrect')
             }
         }
+    })
+}
 
+
+function logout(req, res, next) {
+    req.session.destroy(function (err) {
+        if (err) {
+            console.log('Er is een probleem met uitloggen')
+        } else {
+            res.redirect('/')
+        }
     })
 }

@@ -6,8 +6,16 @@
     <form action="/registerUser" method="post">
         <fieldset>
             <legend>Register</legend>
-            <input type="text" placeholder="email" name="username"><br>
-            <input type="password" name="password"><br>
+            <input type="text" placeholder="Email" name="email"><br>
+
+            <input type="text" placeholder="Voornaam" name="nameFirst"><br>
+            <label><input name='nameLast' type="text" placeholder="Achternaam">Achternaam</label><br>
+
+            <label><input name='password' type="password">Password</label><br>
+            <br>
+            <label><input type="radio" name="gender" value="male"> Male</label>
+            <label><input type="radio" name="gender" value="female"> Female</label>
+
             <button>Submit</button>
         </fieldset>
     </form>
