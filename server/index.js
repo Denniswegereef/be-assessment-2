@@ -45,6 +45,7 @@ module.exports = express()
 .get('/user/:id', getUser)
 
 .get('/account', account)
+.post('/updateAccount', updateAccount)
 
 .get('/log-out', logout)
 
@@ -237,7 +238,7 @@ function account(req, res) {
         user: req.session.user,
         info: []
     }
-    var currentUser = data.user.username
+    var currentUser = req.session.user.username
 
     var dbUsers = db.collection('users')
     dbUsers.findOne({username: currentUser}, function (err, user) {
@@ -249,6 +250,30 @@ function account(req, res) {
         data.info = user // Binder use data to the object
         res.render('dashboard/account.ejs', data)
     });
+}
+
+function updateAccount(req, res) {
+    var data = {
+        user: req.session.user,
+        info: []
+    }
+    var currentUser = req.session.user.username
+
+    try {
+        var dbUsers = db.collection('users')
+        dbUsers.updateOne(
+            { username : currentUser },
+            { $set: {
+                "name.first": req.body.first,
+                "name.last": req.body.last
+            }}
+        )
+    } catch (e) {
+        console.log(e);
+        return
+    }
+    res.redirect('/account')
+
 }
 
 

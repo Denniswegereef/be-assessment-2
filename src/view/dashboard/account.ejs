@@ -7,6 +7,15 @@
     <h3>FirstName: <%= info.name.first%></h3>
     <h3>Lastname: <%= info.name.last %></h3>
     <h3>Gender: <%= info.info.gender %></h3>
+    <br><br>
+    <h1>Wijzig account</h1><br>
+    <form action="/updateAccount" method="post">
+        <fieldset>
+            <label>Voornaam <input name="first" type="text" placeholder="<%= info.name.first %>"></label><br>
+            <label>Achternaam <input name="last" type="text" placeholder="<%= info.name.last %>"></label>
+            <button>Wijzig</button>
+        </fieldset>
+    </form>
 </main>
 
 <%- include('../component/footer.ejs'); %>
