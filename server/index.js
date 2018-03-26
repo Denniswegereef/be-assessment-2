@@ -44,6 +44,8 @@ module.exports = express()
 
 .get('/user/:id', getUser)
 
+.get('/account', account)
+
 .get('/log-out', logout)
 
 
@@ -61,7 +63,9 @@ function home(req, res, next) {
 
 function dashboard(req, res) {
     if (!req.session.user) {
-        res.render('dashboard/error.ejs')
+        res.render('dashboard/error.ejs', {
+            user: req.session.user
+        })
         return
     }
 
@@ -104,9 +108,31 @@ function addUser(req, res) {
 }
 
 function getUser(req, res) {
-    res.render('dashboard/user.ejs')
-}
 
+
+    var userID = req.params.id
+    console.log(userID)
+
+    var data = {
+        user: req.session.user,
+        info: []
+    }
+
+    var dbUsers = db.collection('users')
+
+    var o_id = new mongo.ObjectID(userID);
+
+    dbUsers.findOne({_id: o_id}, function (err, user) {
+        if (err) {
+            // error
+            console.log('error with db')
+            return
+        }
+        data.info = user
+        console.log('wel wat gevonden <3')
+        res.render('dashboard/user.ejs', data)
+    });
+}
 
 function register(req, res) {
     res.render('front/register.ejs', {
@@ -160,7 +186,6 @@ function registerUser(req, res, next) {
     }
 }
 
-
 function login(req, res) {
     res.render('front/log-in.ejs', {
         user: req.session.user
@@ -198,6 +223,32 @@ function loginUser(req, res, next) {
             }
         }
     })
+}
+
+function account(req, res) {
+    if (!req.session.user) {
+        res.render('dashboard/error.ejs', {
+            user: req.session.user
+        })
+        return
+    }
+
+    var data = {
+        user: req.session.user,
+        info: []
+    }
+    var currentUser = data.user.username
+
+    var dbUsers = db.collection('users')
+    dbUsers.findOne({username: currentUser}, function (err, user) {
+        if (err) {
+            // error
+            console.log('error with db')
+            return
+        }
+        data.info = user // Binder use data to the object
+        res.render('dashboard/account.ejs', data)
+    });
 }
 
 

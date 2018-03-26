@@ -5,3 +5,4 @@ window.addEventListener('blur', function () {
 window.addEventListener('focus', function () {
     document.title = "Hello"
 })
+// alert('hello')
