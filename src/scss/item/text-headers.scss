@@ -1,4 +1,25 @@
 h1 {
-  font-size: 30px;
-  color: blue;
+  font-size: 3em;
+  padding-bottom: 1rem;
+  color: $darkGrey;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-bottom: 2rem;
+  span {
+    color: $firstColor;
+  }
+}
+
+h3 {
+  font-size: 2em;
+}
+
+p {
+  margin-bottom: 1.5em;
+  span {
+    color: $firstColor;
+  }
 }

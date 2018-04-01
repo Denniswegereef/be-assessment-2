@@ -1,6 +1,7 @@
 var mongo = require('mongodb')
 var chalk = require('chalk')
 var argon2 = require('argon2')
+var timestamp = require('time-stamp');
 
 var db = null
 var url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT
@@ -13,7 +14,7 @@ mongo.MongoClient.connect(url, function (err, client) {
 function login(req, res) {
     console.log(req.body)
 
-    var currentUser = req.body.username
+    var currentUser = req.body.email
     var password = req.body.password
 
     if (!currentUser || !password) {
@@ -24,10 +25,10 @@ function login(req, res) {
 
     var dbUsers = db.collection('users')
 
-    dbUsers.findOne({username: currentUser}, function (err, user) {
+    dbUsers.findOne({email: currentUser}, function (err, user) {
         if (err) {
             // error
-            console.log('error with db')
+            console.log(chalk.red('Username bestaat al'))
         } else {
             argon2.verify(user.password, password)
             .then(onverify)
@@ -56,8 +57,79 @@ function logout(req, res) {
 }
 
 function register(req, callback) {
-    var min = 8
-    var max = 160
+    var input = req.body
+
+    if (!input.password === input.passwordAgain){
+        console.log(chalk.red('Passwords do not match'))
+        return
+    }
+
+    const user = {
+        user: input.first + ' ' + input.last,
+        name: {
+            first: input.first,
+            last: input.last
+        },
+        email: input.email,
+        password: input.password,
+        info: {
+            age: input.age,
+            gender: input.gender,
+            place: input.place,
+            study: input.study,
+            additional: input.additional,
+            image: input.image ? input.image: null,
+            accountCreated: timestamp('DD/MM/YYYY-HH:mm:ss')
+        },
+        preference: {
+            sex: input.sex,
+            ageMin: Number(input.ageMin),
+            ageMax: Number(input.ageMax),
+        },
+        movies: [
+            {
+                name: input.movieOne
+            },
+            {
+                name: input.movieTwo
+            }
+        ],
+        ticket: null,
+        denied: null,
+        matched: null,
+        blocked: null
+    }
+
+    const min = 8
+    const max = 160
+
+    if (user.password.length < min || user.password.length > max) {
+        console.log('Password must be between ' + min +
+            ' and ' + max + ' characters')
+        return
+    }
+
+    argon2.hash(user.password).then(function (hash) {
+        user.password = hash
+        const dbUsers = db.collection('users')
+
+        dbUsers.insertOne(user, function (error, response) {
+            if (error) {
+                console.log('Error occurred while inserting')
+                // return
+            } else {
+                req.session.user = {username: user.email}
+                console.log(chalk.yellow('User created ' + user.user))
+                return callback(response)
+            }
+        })
+
+    }).catch(function (err) {
+        console.log(err)
+    })
+}
+
+function register1(req, callback) {
 
     var username = req.body.email
     var password = req.body.password
@@ -85,7 +157,6 @@ function register(req, callback) {
     }
 
     console.log(password)
-
 
     argon2.hash(password).then(hash => {
 

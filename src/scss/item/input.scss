@@ -1,3 +1,49 @@
-input {
+legend {
+  margin-bottom: 1em;
+}
 
+label {
+  font-size: 1rem;
+  color: $darkGrey;
+  margin-bottom: 1rem;
+  display: block;
+  font-weight: 700;
+}
+
+input {
+  width: 50%;
+  display: block;
+  margin-bottom: 1em;
+  border: none;
+  border-bottom: 1px solid $lightGrey;
+  font-size: .8rem;
+  color: $lightGrey;
+  padding-bottom: 0.5rem;
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid $firstColor;
+    color: $darkGrey;
+  }
+  &:invalid {
+    color: $firstColor;
+  }
+  &:valid {
+    color: $darkGrey;
+  }
+  &[type="radio"] {
+    display: inline-block;
+    width: 15px;
+  }
+}
+
+form {
+  h3 {
+    color: $firstColor;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  fieldset {
+    margin-bottom: 2rem;
+  }
 }

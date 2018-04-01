@@ -1,9 +1,9 @@
 <header>
-    <a href="/">Home</a>
+    <a href="/">Movie dates</a>
     <ul>
         <% if (user) { %>
         <li>
-            <p>Hello <%= user.username %></p></a>
+            <a href="../account">Hello <%= user.username %></a>
         </li>
         <li>
             <a href=../log-out>Log out</a>

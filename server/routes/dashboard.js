@@ -5,7 +5,7 @@ var mongo = require('mongodb'),
 function render(req, res) {
 
     if (!req.session.user) {
-        res.render('dashboard/error.ejs', {
+        res.status(401).render('dashboard/error.ejs', {
             user: req.session.user
         })
         return
@@ -14,7 +14,7 @@ function render(req, res) {
     database.findAll(done)
 
     function done(items) {
-        res.render('dashboard/dashboard.ejs', {
+        res.status(200).render('dashboard/dashboard.ejs', {
             data: items,
             user: req.session.user
         })

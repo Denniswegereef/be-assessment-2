@@ -1,5 +1,5 @@
-var mongo = require('mongodb'),
-    db = require('../database/user')
+var db = require('../database/user'),
+    mongo = require('mongodb')
 
 function render(req, res) {
     var userID = new mongo.ObjectID(req.params.id)

@@ -16,7 +16,9 @@ var home = require('./routes/home'),
     register = require('./routes/register'),
     dashboard = require('./routes/dashboard'),
     user = require('./routes/user'),
-    connect = require('./database/connect')
+    connect = require('./database/connect'),
+    account = require('./routes/account'),
+    login = require('./routes/login')
 
 
 var app = express()
@@ -32,7 +34,7 @@ var app = express()
 
 .get('/', home.render)
 
-.get('/login', login)
+.get('/login', login.render)
 .post('/loginUser', connect.login)
 
 .get('/register', register.render)
@@ -42,69 +44,10 @@ var app = express()
 
 .get('/user/:id', user.render)
 
-.get('/account', account)
-.post('/updateAccount', updateAccount)
+.get('/account', account.render)
+// .post('/updateAccount', account.account)
 
 .get('/log-out', connect.logout)
 
 .listen(8080)
 
-
-function login(req, res) {
-    res.render('front/log-in.ejs', {
-        user: req.session.user
-    })
-}
-
-
-function account(req, res) {
-    if (!req.session.user) {
-        res.render('dashboard/error.ejs', {
-            user: req.session.user
-        })
-        return
-    }
-
-    var data = {
-        user: req.session.user,
-        info: []
-    }
-    var currentUser = req.session.user.username
-
-    var dbUsers = db.collection('users')
-    dbUsers.findOne({username: currentUser}, function (err, user) {
-        if (err) {
-            // error
-            console.log('error with db')
-            return
-        }
-        data.info = user // Binder use data to the object
-        res.render('dashboard/account.ejs', data)
-    })
-}
-
-function updateAccount(req, res) {
-    var data = {
-        user: req.session.user,
-        info: []
-    }
-    var currentUser = req.session.user.username
-
-    try {
-        var dbUsers = db.collection('users')
-        dbUsers.updateOne(
-            {username: currentUser},
-            {
-                $set: {
-                    "name.first": req.body.first,
-                    "name.last": req.body.last
-                }
-            }
-        )
-    } catch (e) {
-        console.log(e)
-        return
-    }
-    res.redirect('/account')
-
-}

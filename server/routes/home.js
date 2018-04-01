@@ -1,11 +1,12 @@
 function home(req, res, next) {
-    let data = {
-        name: 'dennis'
-    }
 
-    res.render('index.ejs', {
-        user: req.session.user
-    })
+    if(!req.session.user){
+        res.render('index.ejs', {
+            user: req.session.user
+        })
+    } else {
+        res.redirect('./dashboard')
+    }
 }
 
 module.exports = {

@@ -1,25 +1,114 @@
 <%- include('../component/head.ejs'); %>
 <%- include('../component/header.ejs'); %>
-
 <main class="container">
-    <h1>Register</h1>
+
+    <h2>Registreer</h2>
     <form action="/registerUser" method="post">
+
         <fieldset>
-            <legend>Register</legend>
-            <input type="text" placeholder="Email" name="email"><br>
+            <label for="name">Voornaam</label>
+            <input id="name" name="first" type="text" placeholder="Voornaam" required>
 
-            <input type="text" placeholder="Voornaam" name="first"><br>
-            <label><input name='last' type="text" placeholder="Achternaam">Achternaam</label><br>
+            <label for="name">Achternaam</label>
+            <input id="name" name="last" type="text" placeholder="Achternaam" required>
 
-            <label><input name='password' type="password">Password</label><br>
-            <br>
-            <label><input type="radio" name="gender" value="male"> Male</label>
-            <label><input type="radio" name="gender" value="female"> Female</label>
-
-            <button>Submit</button>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="naam@email.nl" required>
         </fieldset>
+
+        <fieldset>
+            <label for="password">Voer je wachtwoord in</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="passwordAgain">Herhaal wachtwoord</label>
+            <input type="password" id="passwordAgain" name="passwordAgain" required>
+        </fieldset>
+
+        <fieldset>
+            <h3>Algemene informatie over jezelf</h3>
+
+            <label for="age">Leeftijd</label>
+            <input id="age" type="number" name="age" placeholder="18" required>
+
+            <label for="gender">Geslacht</label>
+            <label class="radio"><input type="radio" name="gender" value="male">Man</label>
+            <label class="radio"><input type="radio" name="gender" value="female">Vrouw</label>
+
+            <label for="place">Woonplaats</label>
+            <input id="place" name="place" type="text" required placeholder="Amsterdam">
+        </fieldset>
+
+        <fieldset>
+            <h3>Waar ben je naar opzoek</h3>
+
+            <label class="radio"><input type="radio" name="sex" value="male">Man</label>
+            <label class="radio"><input type="radio" name="sex" value="female">Vrouw</label>
+
+            <label for="preference">Tussen welke leeftijd?</label>
+            <input type="number" name="ageMin" placeholder="18" min="18" required>en
+            <input type="number" max="110" name="ageMax" required>
+        </fieldset>
+
+        <fieldset>
+            <h3>Maak het persoonlijker</h3>
+
+            <label for="study">Wat studeer je?</label>
+            <input id="study" name="study" type="text" placeholder="Communicatie multimedia design">
+
+            <label for="work">Waar werk je?</label>
+            <input id="work" name="work" type="text" placeholder="Leraar">
+        </fieldset>
+
+        <fieldset>
+            <h3>Kies je favoriete films</h3>
+            <p>Dit wordt gebruikt om onze matchmaking machine te gebruiken</p>
+
+            <label for="movie">Zoek een film</label>
+            <input id="movie" name="movieOne" type="text" placeholder="Lord of the rings">
+
+            <input id="movie" name="movieTwo" type="text" placeholder="Lord of the rings">
+        </fieldset>
+
+        <fieldset>
+            <h3>Wil je nog wat kwijt over jezelf?</h3>
+            <textarea name="additional" name="additional" cols="40" rows="5"></textarea>
+        </fieldset>
+
+        <fieldset>
+            <h3>Maak het af met een mooie foto over jezelf</h3>
+            <input type="image" name="image">
+        </fieldset>
+        <button class="button">Registeer je account</button>
     </form>
 </main>
 
 <%- include('../component/footer.ejs'); %>
 
+<!--/Naam-->
+<!--Email-->
+
+<!--Wachtwoord-->
+<!--Wachtwoord-->
+
+<!--LAAT ZIEN WIE JE BENT stappen invullen ->-->
+
+<!--Algemene informatie over jou-->
+<!--Leeftijd-->
+<!--Waar woon je-->
+<!--Geslacht-->
+
+<!--Naar wie ben je opzoek?-->
+
+<!--Maak het wat persoonlijker-->
+<!--Studie-->
+<!--Werk-->
+
+<!--Films-->
+<!--Favoriete 5 films (door middel van api)-->
+
+<!--Wil je nog wat kwijt over jezelf?-->
+
+<!--Foto’s (kan later ook)-->
+<!--Inputfield foto’s-->
+
+<!--Je bent er klaar voor-->

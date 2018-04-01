@@ -7,8 +7,9 @@ function render(req, res) {
     })
 }
 
+// Register the user
 function user(req, res) {
-
+    console.log(req.body)
     db.register(req, done)
 
     function done(user) {

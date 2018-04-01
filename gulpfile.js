@@ -32,7 +32,6 @@ gulp.task('sass', () => {
 
 gulp.task('watch', () => {
     gulp.watch(paths.css.watch, ['sass'])
-
     gutil.log(chalk.yellow('Watch is running'))
 })
 
