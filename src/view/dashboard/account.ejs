@@ -1,21 +1,49 @@
 <%- include('../component/head.ejs'); %>
 <%- include('../component/header.ejs'); %>
 
-<main class="container">
-    <h1>My account</h1>
-    <h3>Username: <%= info.username %></h3>
-    <h3>FirstName: <%= info.name.first%></h3>
-    <h3>Lastname: <%= info.name.last %></h3>
-    <h3>Gender: <%= info.info.gender %></h3>
-    <br><br>
-    <h1>Wijzig account</h1><br>
-    <form action="/updateAccount" method="post">
-        <fieldset>
-            <label>Voornaam <input name="first" type="text" placeholder="<%= info.name.first %>"></label><br>
-            <label>Achternaam <input name="last" type="text" placeholder="<%= info.name.last %>"></label>
-            <button>Wijzig</button>
-        </fieldset>
-    </form>
+<main class="container user-profile">
+    <section>
+        <h1>Account</h1>
+
+        <% if (user.info.image){ %>
+        <img src="images/users/<%= user.info.image %>" alt="" class="profile-image">
+        <% } else { %>
+        <img src="images/users/profile-placeholder.jpg" alt="" class="profile-image">
+        <% } %>
+
+        <h2><%= user.user %>, <%= user.info.age %></h2>
+        <h3 class="place"><img src="images/icons/place.svg" alt=""><%= user.info.place %></h3>
+
+        <ul>
+            <li><span>Geslacht:</span> <%= user.info.gender === 'male' ? 'man' : 'vrouw' %> </li>
+            <% if (user.info.study){ %>
+            <li><span>Studie:</span> <%= user.info.study %></li>
+            <% } %>
+            <% if (user.info.work){ %>
+            <li><span>Studie:</span> <%= user.info.work %></li>
+            <% } %>
+            <li>Opzoek naar <%= user.preference.sex === 'male' ? 'mannen' : 'vrouwen' %>
+                tussen de <span><%= user.preference.ageMin %></span> en
+                <span><%= user.preference.ageMax %></span> jaar
+            </li>
+        </ul>
+
+        <% if (user.info.additional){ %>
+        <p><span>Dit wil ik nog kwijt over mijzelf.. </span><br>
+            <%= user.info.additional %></p>
+        <% } %>
+
+        <h3>Favoriete films</h3>
+        <ul>
+            <% user.movies.forEach(function (movie) { %>
+                <li><%= movie.name %></li>
+            <% }) %>
+        </ul>
+
+        <p class="created">Aangemaakt op <%= user.info.accountCreated %></p>
+    </section>
+
+    <form action=""></form>
 </main>
 
 <%- include('../component/footer.ejs'); %>

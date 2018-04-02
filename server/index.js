@@ -8,7 +8,11 @@ var bodyParser = require('body-parser')
 var argon2 = require('argon2')
 var session = require('express-session')
 
+const multer = require('multer')
+const upload = multer({dest: 'src/images/users'})
+
 var chalk = require('chalk')
+
 
 require('dotenv').config()
 
@@ -18,7 +22,8 @@ var home = require('./routes/home'),
     user = require('./routes/user'),
     connect = require('./database/connect'),
     account = require('./routes/account'),
-    login = require('./routes/login')
+    login = require('./routes/login'),
+    notFound = require('./routes/notfound')
 
 
 var app = express()
@@ -31,6 +36,7 @@ var app = express()
     saveUninitialized: true,
     secret: process.env.SESSION_SECRET
 }))
+app.use('/images', express.static('src/images'))
 
 .get('/', home.render)
 
@@ -38,7 +44,7 @@ var app = express()
 .post('/loginUser', connect.login)
 
 .get('/register', register.render)
-.post('/registerUser', register.user)
+.post('/registerUser', upload.single('cover'), register.user)
 
 .get('/dashboard', dashboard.render)
 
@@ -48,6 +54,8 @@ var app = express()
 // .post('/updateAccount', account.account)
 
 .get('/log-out', connect.logout)
+
+.get('*', notFound.render)
 
 .listen(8080)
 

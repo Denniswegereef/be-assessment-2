@@ -1,0 +1,30 @@
+.dashboard {
+  display: grid;
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 50px 0;
+}
+
+.user-card {
+  img {
+    width: 100%;
+  }
+  section {
+    padding: .5rem;
+    .info-place {
+
+    }
+    h5 {
+      display: flex;
+      align-items: center;
+    }
+    img {
+      height: 15px;
+      width: 15px;
+    }
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}

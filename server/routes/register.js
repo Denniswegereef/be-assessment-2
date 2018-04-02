@@ -1,5 +1,6 @@
-var argon2 = require('argon2'),
-    db = require('../database/connect')
+const argon2 = require('argon2'),
+    db = require('../database/connect'),
+    chalk = require('chalk')
 
 function render(req, res) {
     res.render('front/register.ejs', {
@@ -9,7 +10,8 @@ function render(req, res) {
 
 // Register the user
 function user(req, res) {
-    console.log(req.body)
+    req.body.file = req.file
+
     db.register(req, done)
 
     function done(user) {

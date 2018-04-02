@@ -1,10 +1,11 @@
-var mongo = require('mongodb')
-var chalk = require('chalk')
-var argon2 = require('argon2')
-var timestamp = require('time-stamp');
+const mongo = require('mongodb')
+const chalk = require('chalk')
+const timestamp = require('time-stamp')
+const argon2 = require('argon2')
+const mime = require('mime-types')
 
-var db = null
-var url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT
+let db = null
+const url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT
 
 mongo.MongoClient.connect(url, function (err, client) {
     if (err) throw err
@@ -12,23 +13,22 @@ mongo.MongoClient.connect(url, function (err, client) {
 })
 
 function login(req, res) {
-    console.log(req.body)
 
-    var currentUser = req.body.email
-    var password = req.body.password
+    const currentUser = req.body.email
+    const password = req.body.password
 
     if (!currentUser || !password) {
         // Status 400
-        console.log('Username or password are missing')
+        console.log(chalk.red('Username or password are missing'))
         return
     }
 
-    var dbUsers = db.collection('users')
+    const dbUsers = db.collection('users')
 
     dbUsers.findOne({email: currentUser}, function (err, user) {
         if (err) {
             // error
-            console.log(chalk.red('Username bestaat al'))
+            console.log(chalk.red('Username exists already'))
         } else {
             argon2.verify(user.password, password)
             .then(onverify)
@@ -36,8 +36,8 @@ function login(req, res) {
 
         function onverify(match) {
             if (match) {
-                console.log(chalk.blue('Ingelogd op ' + user.username))
-                req.session.user = {username: user.username}
+                console.log(chalk.blue('Ingelogd op ' + user.user))
+                req.session.user = user
                 res.redirect('/dashboard')
             } else {
                 console.log(chalk.red('password incorrect'))
@@ -57,9 +57,9 @@ function logout(req, res) {
 }
 
 function register(req, callback) {
-    var input = req.body
+    const input = req.body
 
-    if (!input.password === input.passwordAgain){
+    if (!input.password === input.passwordAgain) {
         console.log(chalk.red('Passwords do not match'))
         return
     }
@@ -77,8 +77,9 @@ function register(req, callback) {
             gender: input.gender,
             place: input.place,
             study: input.study,
+            work: input.work,
             additional: input.additional,
-            image: input.image ? input.image: null,
+            image: input.file ? input.file.filename : null,
             accountCreated: timestamp('DD/MM/YYYY-HH:mm:ss')
         },
         preference: {
@@ -100,10 +101,11 @@ function register(req, callback) {
         blocked: null
     }
 
+
     const min = 8
     const max = 160
 
-    if (user.password.length < min || user.password.length > max) {
+    if (input.password.length < min || input.password.length > max) {
         console.log('Password must be between ' + min +
             ' and ' + max + ' characters')
         return
@@ -118,7 +120,7 @@ function register(req, callback) {
                 console.log('Error occurred while inserting')
                 // return
             } else {
-                req.session.user = {username: user.email}
+                req.session.user = user
                 console.log(chalk.yellow('User created ' + user.user))
                 return callback(response)
             }
@@ -129,56 +131,6 @@ function register(req, callback) {
     })
 }
 
-function register1(req, callback) {
-
-    var username = req.body.email
-    var password = req.body.password
-
-    var user = {
-        username: username,
-        name: {
-            first: req.body.first,
-            last: req.body.last
-        },
-        info: {
-            gender: req.body.gender
-        },
-        password: null
-    }
-
-    if (!username || !password) {
-        console.log('Username or password are missing')
-        return
-    }
-    if (password.length < min || password.length > max) {
-        console.log('Password must be between ' + min +
-            ' and ' + max + ' characters')
-        return
-    }
-
-    console.log(password)
-
-    argon2.hash(password).then(hash => {
-
-        user.password = hash
-
-        var dbUsers = db.collection('users')
-
-        dbUsers.insertOne(user, function (error, response) {
-            if (error) {
-                console.log('Error occurred while inserting')
-                // return
-            } else {
-                req.session.user = {username: user.username}
-                console.log(chalk.yellow('User created' + username))
-                return callback(response)
-            }
-        })
-
-    }).catch(err => {
-        console.log(error)
-    });
-}
 
 module.exports = {
     login: login,

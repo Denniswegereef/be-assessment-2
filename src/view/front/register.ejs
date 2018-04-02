@@ -3,57 +3,57 @@
 <main class="container">
 
     <h2>Registreer</h2>
-    <form action="/registerUser" method="post">
+    <form action="/registerUser" method="post" enctype="multipart/form-data">
 
         <fieldset>
             <label for="name">Voornaam</label>
-            <input id="name" name="first" type="text" placeholder="Voornaam" required>
+            <input id="name" name="first" type="text" placeholder="Voornaam" required value="John">
 
             <label for="name">Achternaam</label>
-            <input id="name" name="last" type="text" placeholder="Achternaam" required>
+            <input id="name" name="last" type="text" placeholder="Achternaam" required value="Doe">
 
             <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="naam@email.nl" required>
+            <input id="email" name="email" type="email" placeholder="naam@email.nl" required value="test@gmail.com">
         </fieldset>
 
         <fieldset>
             <label for="password">Voer je wachtwoord in</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" required value="wegereef">
 
             <label for="passwordAgain">Herhaal wachtwoord</label>
-            <input type="password" id="passwordAgain" name="passwordAgain" required>
+            <input type="password" id="passwordAgain" name="passwordAgain" required value="wegereef">
         </fieldset>
 
         <fieldset>
             <h3>Algemene informatie over jezelf</h3>
 
             <label for="age">Leeftijd</label>
-            <input id="age" type="number" name="age" placeholder="18" required>
+            <input id="age" type="number" name="age" placeholder="18" required value="21">
 
             <label for="gender">Geslacht</label>
             <label class="radio"><input type="radio" name="gender" value="male">Man</label>
-            <label class="radio"><input type="radio" name="gender" value="female">Vrouw</label>
+            <label class="radio"><input type="radio" name="gender" value="female" checked>Vrouw</label>
 
             <label for="place">Woonplaats</label>
-            <input id="place" name="place" type="text" required placeholder="Amsterdam">
+            <input id="place" name="place" type="text" required placeholder="Amsterdam" value="Amsterdam">
         </fieldset>
 
         <fieldset>
             <h3>Waar ben je naar opzoek</h3>
 
-            <label class="radio"><input type="radio" name="sex" value="male">Man</label>
+            <label class="radio"><input type="radio" name="sex" value="male" checked>Man</label>
             <label class="radio"><input type="radio" name="sex" value="female">Vrouw</label>
 
             <label for="preference">Tussen welke leeftijd?</label>
-            <input type="number" name="ageMin" placeholder="18" min="18" required>en
-            <input type="number" max="110" name="ageMax" required>
+            <input type="number" name="ageMin" placeholder="18" min="18" required value="18">en
+            <input type="number" max="110" name="ageMax" required value="25">
         </fieldset>
 
         <fieldset>
             <h3>Maak het persoonlijker</h3>
 
             <label for="study">Wat studeer je?</label>
-            <input id="study" name="study" type="text" placeholder="Communicatie multimedia design">
+            <input id="study" name="study" type="text" placeholder="Communicatie multimedia design" value="Fotovakschool">
 
             <label for="work">Waar werk je?</label>
             <input id="work" name="work" type="text" placeholder="Leraar">
@@ -64,9 +64,9 @@
             <p>Dit wordt gebruikt om onze matchmaking machine te gebruiken</p>
 
             <label for="movie">Zoek een film</label>
-            <input id="movie" name="movieOne" type="text" placeholder="Lord of the rings">
+            <input id="movie" name="movieOne" type="text" placeholder="Lord of the rings" value="Lord of the rings">
 
-            <input id="movie" name="movieTwo" type="text" placeholder="Lord of the rings">
+            <input id="movie" name="movieTwo" type="text" placeholder="Lord of the rings" value="Star Wars">
         </fieldset>
 
         <fieldset>
@@ -76,7 +76,7 @@
 
         <fieldset>
             <h3>Maak het af met een mooie foto over jezelf</h3>
-            <input type="image" name="image">
+            <input name="cover" type="file" accept="image/*">
         </fieldset>
         <button class="button">Registeer je account</button>
     </form>

@@ -61,40 +61,6 @@ html {
   box-sizing: inherit;
 }
 
-header {
-  height: 50px;
-  width: 100%;
-  padding: 0 30px;
-  background-color: #1e1e1e;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: white;
-}
-
-header a {
-  color: white;
-}
-
-header ul {
-  display: flex;
-}
-
-header ul li {
-  margin-left: 1em;
-}
-
-footer {
-  width: 100%;
-  height: 300px;
-  background-color: #1e1e1e;
-  color: white;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 legend {
   margin-bottom: 1em;
 }
@@ -137,6 +103,10 @@ input[type="radio"] {
   width: 15px;
 }
 
+form {
+  max-width: 400px;
+}
+
 form h3 {
   color: #e5777b;
   font-size: 1.2rem;
@@ -156,7 +126,7 @@ h1 {
 
 h2 {
   font-size: 1.8em;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 h2 span {
@@ -164,7 +134,19 @@ h2 span {
 }
 
 h3 {
-  font-size: 2em;
+  font-size: 1.5em;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e1e1e;
+  margin-bottom: 1rem;
+}
+
+h5 {
+  margin-bottom: .5rem;
 }
 
 p {
@@ -176,10 +158,9 @@ p span {
 }
 
 .container {
-  width: 600px;
-  margin: 0 auto;
+  width: 1100px;
+  margin: 50px auto;
   min-height: 500px;
-  padding: 2em;
 }
 
 a {
@@ -207,6 +188,117 @@ a:hover {
   background-color: #e5777b;
   color: #ffffff;
   text-decoration: none;
+}
+
+header {
+  height: 50px;
+  width: 100%;
+  padding: 0 30px;
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+header a {
+  color: white;
+}
+
+header ul {
+  display: flex;
+}
+
+header ul li {
+  margin-left: 1em;
+}
+
+footer {
+  width: 100%;
+  height: 300px;
+  background-color: #1e1e1e;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard {
+  display: grid;
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 50px 0;
+}
+
+.user-card img {
+  width: 100%;
+}
+
+.user-card section {
+  padding: .5rem;
+}
+
+.user-card section h5 {
+  display: flex;
+  align-items: center;
+}
+
+.user-card section img {
+  height: 15px;
+  width: 15px;
+}
+
+.user-card:hover {
+  text-decoration: none;
+}
+
+.user-profile section {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.user-profile section .profile-image {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.user-profile section h2 {
+  font-weight: bold;
+}
+
+.user-profile section .place {
+  display: flex;
+  align-items: center;
+}
+
+.user-profile section .place img {
+  margin-right: .5rem;
+  height: 15px;
+  width: 15px;
+}
+
+.user-profile section ul {
+  margin-bottom: 1rem;
+}
+
+.user-profile section ul li {
+  margin-bottom: .5rem;
+}
+
+.user-profile section ul li span {
+  font-weight: bold;
+}
+
+.user-profile section p span {
+  font-weight: bold;
+  color: #1e1e1e;
+}
+
+.user-profile .created {
+  color: #d3d3d3;
+  font-size: .8rem;
 }
 
 body {

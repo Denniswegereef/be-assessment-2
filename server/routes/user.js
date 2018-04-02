@@ -11,7 +11,7 @@ function render(req, res) {
     db.find({_id: userID}, done)
 
     function done(user) {
-        data.info = user
+        data.user = user
         res.render('dashboard/user.ejs', data)
     }
 }

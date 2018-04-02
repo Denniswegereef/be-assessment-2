@@ -2,17 +2,19 @@
 
 @import "colors/primary.scss";
 
-@import "component/header.scss";
-@import "component/footer.scss";
-
-@import "component/front.scss";
 
 @import "item/input.scss";
 @import "item/text-headers.scss";
 @import "item/container.scss";
 @import "item/anchor.scss";
 @import "item/button.scss";
-@import "item/inputs.scss";
+
+@import "component/header.scss";
+@import "component/footer.scss";
+
+@import "component/front.scss";
+@import "component/user-card.scss";
+@import "component/user-profile.scss";
 
 
 @import "_standard/fonts.scss";

@@ -3,32 +3,30 @@
 
 <main class="container">
     <h1>Dashboard</h1>
-    <br><br>
-    <h1>Hello <%= user.username %></h1>
-    <br><br>
-    <h1>Males</h1>
-    <% data.forEach(function (user) {  %>
-    <% if (user.info.gender === 'male'){ %>
-    <a href="user/<%= user._id %>">
-        <h2><%= user.name.first %></h2>
-        <h3><%= user.name.last %></h3>
-    </a>
-    <br>
-    <% }}) %>
+    <p>Your potential matches</p>
 
-    <h1>Females</h1>
-    <% data.forEach(function (user) {  %>
-    <% if (user.info.gender === 'female'){ %>
-    <a href="user/<%= user._id %>">
-        <h2><%= user.name.first  %></h2>
-        <h3><%= user.name.last  %></h3>
-    </a>
-    <br>
-    <% }}) %>
-    <br><br><br><br>
-    <a href="account">Go to my account</a>
+    <%= user.user %>
+    <%= user.email %>
 
-    <h1>Dashboard</h1>
+    <section class="dashboard">
+        <% data.forEach(function (match) { %>
+        <% if (user.preference.sex === match.info.gender){ %>
+        <a href="user/<%= match._id %>" class="user-card">
+            <article>
+                <% if (match.info.image){ %>
+                <img src="images/users/<%= match.info.image %>" alt="">
+                <% } else { %>
+                <img src="images/users/profile-placeholder.jpg" alt="">
+                <% } %>
+                <section>
+                    <h4><%= match.user %>, <%= match.info.age %></h4>
+                    <h5 class="info-study"><%= match.info.study %></h5>
+                    <h5 class="info-place"><img src="images/icons/place.svg" alt=""><%= match.info.place %></h5>
+                </section>
+            </article>
+        </a>
+        <% }}) %>
+    </section>
 
 </main>
 
