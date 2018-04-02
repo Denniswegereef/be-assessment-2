@@ -3,14 +3,10 @@
 
 <main class="container">
     <h1>Dashboard</h1>
-    <p>Your potential matches</p>
-
-    <%= user.user %>
-    <%= user.email %>
+    <p>Je hebt <%= data.length %> potentiele matches, <%= sessionUser.name.first %></p>
 
     <section class="dashboard">
         <% data.forEach(function (match) { %>
-        <% if (user.preference.sex === match.info.gender){ %>
         <a href="user/<%= match._id %>" class="user-card">
             <article>
                 <% if (match.info.image){ %>
@@ -20,12 +16,16 @@
                 <% } %>
                 <section>
                     <h4><%= match.user %>, <%= match.info.age %></h4>
+                    <% if (match.info.study){ %>
                     <h5 class="info-study"><%= match.info.study %></h5>
+                    <% } if (match.info.work){ %>
+                    <h5 class="info-study"><%= match.info.work %></h5>
+                    <% } %>
                     <h5 class="info-place"><img src="images/icons/place.svg" alt=""><%= match.info.place %></h5>
                 </section>
             </article>
         </a>
-        <% }}) %>
+        <% }) %>
     </section>
 
 </main>

@@ -1,18 +1,33 @@
-var db = require('../database/user'),
-    mongo = require('mongodb')
+const db = require('../database/user'),
+    mongo = require('mongodb'),
+    chalk = require('chalk')
+
 
 function render(req, res) {
-    var userID = new mongo.ObjectID(req.params.id)
-    var data = {
-        user: req.session.user,
-        info: []
+    const data = {
+        sessionUser: req.session.user,
+        data: [],
+        error: []
     }
 
-    db.find({_id: userID}, done)
+    const checkObjectID = new RegExp("^[0-9a-fA-F]{24}$") // Thanks https://stackoverflow.com/questions/11985228/mongodb-node-check-if-objectid-is-valid
 
-    function done(user) {
-        data.user = user
-        res.render('dashboard/user.ejs', data)
+    if (!checkObjectID.test(req.params.id)){
+        console.log(chalk.red('No user found with slug ' + req.params.id))
+        data.error = {
+            status: 400,
+            text: 'User not found'
+        }
+        res.status(404).render('front/error.ejs', data)
+    } else {
+        const userID = new mongo.ObjectID(req.params.id)
+
+        db.find({_id: userID}, done)
+
+        function done(user) {
+            data.data = user
+            res.status(200).render('dashboard/user.ejs', data)
+        }
     }
 }
 

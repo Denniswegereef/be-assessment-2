@@ -5,45 +5,43 @@
     <section>
         <h1>Account</h1>
 
-        <% if (user.info.image){ %>
-        <img src="images/users/<%= user.info.image %>" alt="" class="profile-image">
+        <% if (sessionUser.info.image){ %>
+        <img src="images/users/<%= sessionUser.info.image %>" alt="" class="profile-image">
         <% } else { %>
         <img src="images/users/profile-placeholder.jpg" alt="" class="profile-image">
         <% } %>
 
-        <h2><%= user.user %>, <%= user.info.age %></h2>
-        <h3 class="place"><img src="images/icons/place.svg" alt=""><%= user.info.place %></h3>
+        <h2><%= sessionUser.user %>, <%= sessionUser.info.age %></h2>
+        <h3 class="place"><img src="images/icons/place.svg" alt=""><%= sessionUser.info.place %></h3>
 
         <ul>
-            <li><span>Geslacht:</span> <%= user.info.gender === 'male' ? 'man' : 'vrouw' %> </li>
-            <% if (user.info.study){ %>
-            <li><span>Studie:</span> <%= user.info.study %></li>
+            <li><span>Geslacht:</span> <%= sessionUser.info.gender === 'male' ? 'man' : 'vrouw' %> </li>
+            <% if (sessionUser.info.study){ %>
+            <li><span>Studie:</span> <%= sessionUser.info.study %></li>
             <% } %>
-            <% if (user.info.work){ %>
-            <li><span>Studie:</span> <%= user.info.work %></li>
+            <% if (sessionUser.info.work){ %>
+            <li><span>Studie:</span> <%= sessionUser.info.work %></li>
             <% } %>
-            <li>Opzoek naar <%= user.preference.sex === 'male' ? 'mannen' : 'vrouwen' %>
-                tussen de <span><%= user.preference.ageMin %></span> en
-                <span><%= user.preference.ageMax %></span> jaar
+            <li>Opzoek naar <%= sessionUser.preference.sex === 'male' ? 'mannen' : 'vrouwen' %>
+                tussen de <span><%= sessionUser.preference.ageMin %></span> en
+                <span><%= sessionUser.preference.ageMax %></span> jaar
             </li>
         </ul>
 
-        <% if (user.info.additional){ %>
+        <% if (sessionUser.info.additional){ %>
         <p><span>Dit wil ik nog kwijt over mijzelf.. </span><br>
-            <%= user.info.additional %></p>
+            <%= sessionUser.info.additional %></p>
         <% } %>
 
         <h3>Favoriete films</h3>
         <ul>
-            <% user.movies.forEach(function (movie) { %>
+            <% sessionUser.movies.forEach(function (movie) { %>
                 <li><%= movie.name %></li>
             <% }) %>
         </ul>
 
-        <p class="created">Aangemaakt op <%= user.info.accountCreated %></p>
+        <p class="created">Aangemaakt op <%= sessionUser.info.accountCreated %></p>
     </section>
-
-    <form action=""></form>
 </main>
 
 <%- include('../component/footer.ejs'); %>

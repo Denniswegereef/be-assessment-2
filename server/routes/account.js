@@ -1,18 +1,20 @@
 var db = require('../database/user')
 
 function accountRender(req, res) {
+    const data = {
+        sessionUser: req.session.user,
+        data: [],
+        error: []
+    }
+
     if (!req.session.user) {
-        res.render('dashboard/error.ejs', {
-            user: req.session.user
-        })
+
+        res.render('front/error.ejs', data)
         return
     }
 
-    res.render('dashboard/account.ejs', {
-        user: req.session.user
-    })
+    res.status(200).render('dashboard/account.ejs', data)
 }
-
 
 module.exports = {
     render: accountRender

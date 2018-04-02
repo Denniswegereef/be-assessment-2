@@ -158,9 +158,11 @@ p span {
 }
 
 .container {
-  width: 1100px;
+  width: 100%;
+  max-width: 1100px;
   margin: 50px auto;
   min-height: 500px;
+  padding: 0 50px;
 }
 
 a {
@@ -201,6 +203,12 @@ header {
   color: white;
 }
 
+header img {
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+}
+
 header a {
   color: white;
 }
@@ -210,6 +218,8 @@ header ul {
 }
 
 header ul li {
+  display: flex;
+  align-items: center;
   margin-left: 1em;
 }
 
@@ -254,21 +264,29 @@ footer {
   text-decoration: none;
 }
 
-.user-profile section {
-  max-width: 700px;
-  margin: 0 auto;
+.user-profile {
+  max-width: 400px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .user-profile section .profile-image {
-  width: 100%;
   margin-bottom: 1rem;
+  max-height: 400px;
+  overflow: hidden;
+  max-width: 400px;
+  height: 100%;
 }
 
 .user-profile section h2 {
   font-weight: bold;
+  text-align: center;
 }
 
 .user-profile section .place {
+  justify-content: center;
   display: flex;
   align-items: center;
 }

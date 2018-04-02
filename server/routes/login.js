@@ -1,7 +1,10 @@
 function login(req, res) {
-    res.render('front/log-in.ejs', {
-        user: req.session.user
-    })
+    const data = {
+        sessionUser: req.session.user,
+        data: [],
+        error: []
+    }
+    res.render('front/log-in.ejs', data)
 }
 
 module.exports = {

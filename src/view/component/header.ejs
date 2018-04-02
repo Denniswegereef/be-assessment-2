@@ -1,9 +1,16 @@
 <header>
     <a href="/">Movie dates</a>
     <ul>
-        <% if (user) { %>
+        <% if (sessionUser) { %>
         <li>
-            <a href="../account">Hello <%= user.user %></a>
+            <a href="../account">Hello <%= sessionUser.user %></a>
+        </li>
+        <li>
+            <% if (sessionUser.info.image){ %>
+            <img src="images/users/<%= sessionUser.info.image %>" alt="">
+            <% } else { %>
+            <img src="images/users/profile-placeholder.jpg" alt="">
+            <% } %>
         </li>
         <li>
             <a href=../log-out>Log out</a>

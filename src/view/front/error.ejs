@@ -1,7 +1,8 @@
 <%- include('../component/head.ejs'); %>
 <%- include('../component/header.ejs'); %>
 <main class="container">
-    <h1>This is an error</h1>
+    <h1>Error <%= error.status %></h1>
+    <h2><%= error.text %></h2>
 </main>
 
 <%- include('../component/footer.ejs'); %>

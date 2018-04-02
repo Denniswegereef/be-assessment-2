@@ -7,12 +7,19 @@ header {
   justify-content: space-between;
   align-items: center;
   color: white;
+  img {
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+  }
   a {
     color: white;
   }
   ul {
     display: flex;
     li {
+      display: flex;
+      align-items: center;
       margin-left: 1em;
     }
   }

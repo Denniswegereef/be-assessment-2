@@ -36,7 +36,7 @@ function login(req, res) {
 
         function onverify(match) {
             if (match) {
-                console.log(chalk.blue('Ingelogd op ' + user.user))
+                console.log(chalk.blue('Logged in' + user.user))
                 req.session.user = user
                 res.redirect('/dashboard')
             } else {
@@ -76,8 +76,8 @@ function register(req, callback) {
             age: input.age,
             gender: input.gender,
             place: input.place,
-            study: input.study,
-            work: input.work,
+            study: input.study ? input.study : null,
+            work: input.work ? input.work : null,
             additional: input.additional,
             image: input.file ? input.file.filename : null,
             accountCreated: timestamp('DD/MM/YYYY-HH:mm:ss')

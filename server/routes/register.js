@@ -3,9 +3,13 @@ const argon2 = require('argon2'),
     chalk = require('chalk')
 
 function render(req, res) {
-    res.render('front/register.ejs', {
-        user: req.session.user
-    })
+    const data = {
+        sessionUser: req.session.user,
+        data: [],
+        error: []
+    }
+
+    res.render('front/register.ejs', data)
 }
 
 // Register the user
