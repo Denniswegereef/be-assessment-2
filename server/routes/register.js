@@ -16,6 +16,12 @@ function render(req, res) {
 function user(req, res) {
     req.body.file = req.file
 
+    const data = {
+        sessionUser: req.session.user,
+        data: [],
+        error: []
+    }
+
     db.register(req, done)
 
     function done(user) {

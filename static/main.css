@@ -117,6 +117,14 @@ form fieldset {
   margin-bottom: 2rem;
 }
 
+form fieldset img {
+  margin-bottom: 1rem;
+  max-height: 400px;
+  overflow: hidden;
+  max-width: 400px;
+  height: 100%;
+}
+
 h1 {
   font-size: 3em;
   padding-bottom: 1rem;

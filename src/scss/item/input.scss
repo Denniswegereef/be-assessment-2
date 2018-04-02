@@ -46,5 +46,12 @@ form {
 
   fieldset {
     margin-bottom: 2rem;
+    img {
+      margin-bottom: 1rem;
+      max-height: 400px;
+      overflow: hidden;
+      max-width: 400px;
+      height: 100%;
+    }
   }
 }

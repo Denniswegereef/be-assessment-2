@@ -33,8 +33,14 @@ function findUser(obj, callback) {
     })
 }
 
+function updateUser(input, session, callback) {
+    return callback('done')
+
+}
+
 module.exports = {
     findAll: findAll,
-    find: findUser
+    find: findUser,
+    update: updateUser
 }
 

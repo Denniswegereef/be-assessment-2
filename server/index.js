@@ -51,7 +51,8 @@ app.use('/images', express.static('src/images'))
 .get('/user/:id', user.render)
 
 .get('/account', account.render)
-// .post('/updateAccount', account.account)
+.get('/account-change', account.change)
+.post('/accountChange', account.update)
 
 .get('/log-out', connect.logout)
 

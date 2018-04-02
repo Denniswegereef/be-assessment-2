@@ -1,0 +1,92 @@
+<%- include('../component/head.ejs'); %>
+<%- include('../component/header.ejs'); %>
+
+<main class="container">
+    <section>
+        <h1>Gegevens aanpassen</h1>
+        <form action="accountChange" method="post">
+            <fieldset>
+                <label for="name">Voornaam</label>
+                <input id="name" name="first" type="text" placeholder="<%= sessionUser.name.first %>">
+
+                <label for="name">Achternaam</label>
+                <input id="name" name="last" type="text" placeholder="<%= sessionUser.name.last %>">
+
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="<%= sessionUser.email %>">
+            </fieldset>
+
+            <fieldset>
+                <label for="password">Nieuw wachtwoord</label>
+                <input type="password" id="password" name="password">
+
+                <label for="passwordAgain">Herhaal wachtwoord</label>
+                <input type="password" id="passwordAgain" name="passwordAgain">
+            </fieldset>
+
+            <fieldset>
+                <h3>Algemene informatie over jezelf</h3>
+
+                <label for="age">Leeftijd</label>
+                <input id="age" type="number" name="age" placeholder="<%= sessionUser.info.age %>">
+
+                <label for="gender">Geslacht</label>
+                <label class="radio"><input type="radio" name="gender" value="male" <%= sessionUser.info.gender === 'male' ? 'checked' : '' %>>Man</label>
+                <label class="radio"><input type="radio" name="gender" value="female" <%= sessionUser.info.gender === 'female' ? 'checked' : '' %>>Vrouw</label>
+
+                <label for="place">Woonplaats</label>
+                <input id="place" name="place" type="text" placeholder="<%= sessionUser.info.place %>" >
+            </fieldset>
+
+            <fieldset>
+                <h3>Waar ben je naar opzoek</h3>
+
+                <label class="radio"><input type="radio" name="sex" value="male" <%= sessionUser.preference.sex === 'male' ? 'checked' : '' %>>Man</label>
+                <label class="radio"><input type="radio" name="sex" value="female"  <%= sessionUser.preference.sex === 'female' ? 'checked' : '' %>>Vrouw</label>
+
+                <label for="preference">Tussen welke leeftijd?</label>
+                <input type="number" name="ageMin" placeholder="<%= sessionUser.preference.ageMin %>" min="18">en
+                <input type="number" max="110" name="ageMax" placeholder="<%= sessionUser.preference.ageMax %>">
+            </fieldset>
+
+            <fieldset>
+                <h3>Maak het persoonlijker</h3>
+
+                <label for="study">Wat studeer je?</label>
+                <input id="study" name="study" type="text" placeholder="<%= sessionUser.info.study %>">
+
+                <label for="work">Waar werk je?</label>
+                <input id="work" name="work" type="text" placeholder="<%= sessionUser.info.work %>">
+            </fieldset>
+
+            <fieldset>
+                <h3>Kies je favoriete films</h3>
+                <p>Dit wordt gebruikt om onze matchmaking machine te gebruiken</p>
+
+                <label for="movie">Zoek een film (DOET HIET NU NIET!) </label>
+                <input id="movie" name="movieOne" type="text" placeholder="Lord of the rings">
+
+                <input id="movie" name="movieTwo" type="text" placeholder="Lord of the rings">
+            </fieldset>
+
+            <fieldset>
+                <h3>Wil je nog wat kwijt over jezelf?</h3>
+                <textarea name="additional" name="additional" cols="40" rows="5" placeholder="<%= sessionUser.info.additional %>"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <h3>Upload een nieuwe foto</h3>
+                <% if (sessionUser.info.image){ %>
+                <img src="images/users/<%= sessionUser.info.image %>" alt="">
+                <% } else { %>
+                <img src="images/users/profile-placeholder.jpg" alt="">
+                <% } %>
+                <input name="cover" type="file" accept="image/*">
+            </fieldset>
+            <button>Update</button>
+        </form>
+    </section>
+
+</main>
+<%- include('../component/footer.ejs'); %>
+
