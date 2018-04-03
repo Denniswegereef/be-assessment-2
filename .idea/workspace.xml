@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="099840d4-934f-4ecf-ace6-a274a24e6f49" name="Default" comment="" />
+    <list default="true" id="099840d4-934f-4ecf-ace6-a274a24e6f49" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scss/item/button.scss" afterPath="$PROJECT_DIR$/src/scss/item/button.scss" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -29,8 +31,8 @@
           <file leaf-file-name="button.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/scss/item/button.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+                <state relative-caret-position="315">
+                  <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="6" />
                   <folding />
                 </state>
               </provider>
@@ -345,12 +347,12 @@
       <workItem from="1522667189206" duration="21786000" />
       <workItem from="1522741765937" duration="402000" />
       <workItem from="1522751788014" duration="4276000" />
-      <workItem from="1522765828783" duration="4543000" />
+      <workItem from="1522765828783" duration="5173000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114736000" />
+    <option name="totallyTimeSpent" value="115366000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -818,8 +820,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scss/item/button.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        <state relative-caret-position="315">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="6" />
           <folding />
         </state>
       </provider>
