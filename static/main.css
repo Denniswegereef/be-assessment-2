@@ -200,6 +200,10 @@ a:hover {
   text-decoration: none;
 }
 
+.remove-ticket {
+  background-color: #e5777b;
+}
+
 header {
   height: 50px;
   width: 100%;
@@ -240,6 +244,31 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.page-header {
+  width: 100%;
+  position: relative;
+}
+
+.page-header ul {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+}
+
+.page-header ul li {
+  margin-left: 1rem;
+  font-size: 1.5em;
+}
+
+.page-header ul li a {
+  text-decoration: underline;
+}
+
+.page-header ul li a:hover {
+  color: #e5777b;
 }
 
 .dashboard {

@@ -20,7 +20,7 @@
             <li><span>Studie:</span> <%= data.info.study %></li>
             <% } %>
             <% if (data.info.work){ %>
-            <li><span>Studie:</span> <%= data.info.work %></li>
+            <li><span>Werk:</span> <%= data.info.work %></li>
             <% } %>
             <li>Opzoek naar <%= data.preference.sex === 'male' ? 'mannen' : 'vrouwen' %>
                 tussen de <span><%= data.preference.ageMin %></span> en
@@ -41,8 +41,14 @@
         </ul>
 
         <p class="created">Aangemaakt op <%= data.info.accountCreated %></p>
-    </section>
 
+        <% if (ticket){ %>
+        <a class="button remove-ticket" >Remove ticket</a>
+        <% } else {%>
+        <a class="button" href="../user/<%= data._id %>/sendTicket">Send ticket</a>
+        <% } %>
+
+    </section>
 </main>
 <%- include('../component/footer.ejs'); %>
 

@@ -1,6 +1,8 @@
 const db = require('../database/user'),
     mongo = require('mongodb'),
-    chalk = require('chalk')
+    chalk = require('chalk'),
+    ticket = require('../routes/tickets')
+
 
 
 function render(req, res) {
@@ -26,7 +28,12 @@ function render(req, res) {
 
         function done(user) {
             data.data = user
-            res.status(200).render('dashboard/user.ejs', data)
+
+            ticket.check(userID, user, done)
+            function done(ticket) {
+                data.ticket = ticket
+                res.status(200).render('dashboard/user.ejs', data)
+            }
         }
     }
 }

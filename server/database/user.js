@@ -1,8 +1,8 @@
-var mongo = require('mongodb')
-var chalk = require('chalk')
+const mongo = require('mongodb')
+const chalk = require('chalk')
 
-var db = null
-var url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT
+let db = null
+const url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT
 
 mongo.MongoClient.connect(url, function (err, client) {
     if (err) throw err
@@ -35,7 +35,6 @@ function findUser(obj, callback) {
 
 function updateUser(input, session, callback) {
     return callback('done')
-
 }
 
 module.exports = {

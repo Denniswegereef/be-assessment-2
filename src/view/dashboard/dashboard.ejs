@@ -2,9 +2,15 @@
 <%- include('../component/header.ejs'); %>
 
 <main class="container">
-    <h1>Dashboard</h1>
-    <p>Je hebt <%= data.length %> potentiele matches, <%= sessionUser.name.first %></p>
+    <div class="page-header">
+        <h1>Dashboard</h1>
+        <p>Je hebt <%= data.length %> potentiele matches, <%= sessionUser.name.first %></p>
 
+        <ul>
+            <li><a href="chats">Gesprekken</a></li>
+            <li class="tickets"><a href="tickets">Tickets</a></li>
+        </ul>
+    </div>
     <section class="dashboard">
         <% data.forEach(function (match) { %>
         <a href="user/<%= match._id %>" class="user-card">

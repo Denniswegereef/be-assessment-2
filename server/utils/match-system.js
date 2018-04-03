@@ -1,7 +1,7 @@
 const chalk = require('chalk')
 
 function matchsystem(currentUser, potential, callback) {
-    const maxMatches = 12
+    const maxMatches = 3
     const matches = []
     potential.forEach(function (user) {
         if (currentUser.preference.sex === user.info.gender && user.preference.sex === currentUser.info.gender) {

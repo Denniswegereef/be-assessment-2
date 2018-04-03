@@ -23,7 +23,9 @@ var home = require('./routes/home'),
     connect = require('./database/connect'),
     account = require('./routes/account'),
     login = require('./routes/login'),
-    notFound = require('./routes/notfound')
+    notFound = require('./routes/notfound'),
+    chats = require('./routes/chats'),
+    tickets = require('./routes/tickets')
 
 
 var app = express()
@@ -50,9 +52,16 @@ app.use('/images', express.static('src/images'))
 
 .get('/user/:id', user.render)
 
+
+.get('/tickets', tickets.render)
+.get('/user/:id/sendTicket', tickets.send)
+
 .get('/account', account.render)
 .get('/account-change', account.change)
 .post('/accountChange', account.update)
+
+.get('/chats', chats.render)
+
 
 .get('/log-out', connect.logout)
 

@@ -36,7 +36,7 @@ function login(req, res) {
 
         function onverify(match) {
             if (match) {
-                console.log(chalk.blue('Logged in' + user.user))
+                console.log(chalk.blue('Logged in ' + user.user))
                 req.session.user = user
                 res.redirect('/dashboard')
             } else {
@@ -47,11 +47,19 @@ function login(req, res) {
 }
 
 function logout(req, res) {
+    const data = {
+        sessionUser: req.session.user,
+        data: [],
+        error: []
+    }
+
     req.session.destroy(function (err) {
         if (err) {
             console.log('Er is een probleem met uitloggen')
         } else {
-            res.redirect('/')
+            data.sessionUser = null
+            data.message = 'Succesfully logged out'
+            res.status(200).render('index.ejs', data)
         }
     })
 }
