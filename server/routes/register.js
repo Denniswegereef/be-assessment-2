@@ -25,7 +25,15 @@ function user(req, res) {
     db.register(req, done)
 
     function done(user) {
-        res.redirect('/dashboard')
+        try {
+            if(!user) {
+                res.redirect('/')
+            } else {
+                res.redirect('/dashboard')
+            }
+        } catch (err) {
+            console.log(err)
+        }
     }
 }
 

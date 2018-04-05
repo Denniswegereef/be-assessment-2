@@ -1,6 +1,6 @@
 'use strict'
 
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     sass = require('gulp-sass'),
 
     connect = require('gulp-connect'),

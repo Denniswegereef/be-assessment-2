@@ -1,4 +1,4 @@
-var mongo = require('mongodb'),
+const mongo = require('mongodb'),
     database = require('../database/user'),
     match = require('../utils/match-system'),
     chalk = require('chalk')

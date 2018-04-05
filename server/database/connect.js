@@ -31,8 +31,14 @@ function login(req, res) {
             // error
             console.log(chalk.red('Username exists already'))
         } else {
-            argon2.verify(user.password, password)
-            .then(onverify)
+            try {
+                argon2.verify(user.password, password)
+                .then(onverify)
+            } catch (err) {
+                res.redirect('/')
+                console.log(chalk.red(err))
+            }
+
         }
 
         function onverify(match) {
@@ -76,10 +82,24 @@ function register(req, callback) {
     const min = 8
     const max = 160
 
-    if (req.body.password.length < min || input.password.length > max) {
+    if (input.password.length < min || input.password.length > max) {
         console.log('Password must be between ' + min +
             ' and ' + max + ' characters')
         return
+    }
+
+    const dbUsers = db.collection('users')
+
+    dbUsers.findOne({
+        email: input.email
+    }, checkUser)
+
+    function checkUser(err, result) {
+        if(err){
+        } else {
+            console.log(chalk.red('User with email already exists'))
+            return callback(false)
+        }
     }
 
     argon2.hash(input.password).then(function (hash) {
@@ -90,7 +110,6 @@ function register(req, callback) {
 
         function done(user) {
 
-            const dbUsers = db.collection('users')
 
             dbUsers.insertOne(user, function (error, response) {
                 if (error) {
@@ -116,18 +135,18 @@ function removeUser(req, res) {
         error: []
     }
 
-    if(req.params.id === data.sessionUser._id) {
+    if (req.params.id === data.sessionUser._id) {
         const userID = new mongo.ObjectID(data.sessionUser._id)
         const collection = db.collection('users')
 
         collection.remove({
             _id: userID
         }, function (err, result) {
-            if(err){
+            if (err) {
                 console.log(chalk.red('Something going wrong with deleting'))
             } else {
                 console.log(chalk.blue('Deleted user'))
-                logout(req,res)
+                logout(req, res)
                 res.redirect('/')
             }
         })
@@ -136,9 +155,8 @@ function removeUser(req, res) {
             status: 405,
             text: 'Method not authorized'
         }
-        res.render('front/error.erjs', data)
+        res.render('front/error.ejs', data)
     }
-
 }
 
 module.exports = {

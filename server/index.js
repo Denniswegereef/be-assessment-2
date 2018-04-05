@@ -1,22 +1,22 @@
 'use strict'
 
-var express = require('express')
-var mongo = require('mongodb')
+const express = require('express')
+const mongo = require('mongodb')
 
-var bodyParser = require('body-parser')
+const bodyParser = require('body-parser')
 
-var argon2 = require('argon2')
-var session = require('express-session')
+const argon2 = require('argon2')
+const session = require('express-session')
 
 const multer = require('multer')
 const upload = multer({dest: 'src/images/users'})
 
-var chalk = require('chalk')
+const chalk = require('chalk')
 
 
 require('dotenv').config()
 
-var home = require('./routes/home'),
+const home = require('./routes/home'),
     register = require('./routes/register'),
     dashboard = require('./routes/dashboard'),
     user = require('./routes/user'),
@@ -28,7 +28,7 @@ var home = require('./routes/home'),
     tickets = require('./routes/tickets')
 
 
-var app = express()
+const app = express()
 .set('view engine', 'ejs')
 .set('views', 'src/view')
 .use(express.static('static'))
