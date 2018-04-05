@@ -1,5 +1,6 @@
 const mongo = require('mongodb')
 const chalk = require('chalk')
+const schema = require('../utils/user-schema')
 
 let db = null
 const url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT
@@ -22,7 +23,7 @@ function findAll(callback) {
 }
 
 function findUser(obj, callback) {
-    var collection = db.collection('users')
+    const collection = db.collection('users')
 
     collection.findOne(obj, function (err, user) {
         if (err) {
@@ -34,7 +35,28 @@ function findUser(obj, callback) {
 }
 
 function updateUser(input, session, callback) {
-    return callback('done')
+    (function clean(user) {
+        for (let key in user) {
+            if (user[key] === '' || user[key] === undefined) {
+                delete user[key]
+            }
+        }
+    }(input))
+
+    schema.user(input, session, done)
+
+    function done(updatedUser) {
+
+        const collection = db.collection('users')
+
+        const userID = new mongo.ObjectID(session._id)
+
+        collection.update({_id: userID}, {
+            $set: updatedUser
+        })
+
+        callback(updatedUser)
+    }
 }
 
 module.exports = {

@@ -4,13 +4,13 @@
 <main class="container">
     <section>
         <h1>Gegevens aanpassen</h1>
-        <form action="accountChange" method="post">
+        <form action="accountChange" method="post" enctype="multipart/form-data">
             <fieldset>
                 <label for="name">Voornaam</label>
-                <input id="name" name="first" type="text" placeholder="<%= sessionUser.name.first %>">
+                <input id="name" name="first" type="text" placeholder="<%= sessionUser.name.first %>"  value="<%= sessionUser.name.first %>">
 
                 <label for="name">Achternaam</label>
-                <input id="name" name="last" type="text" placeholder="<%= sessionUser.name.last %>">
+                <input id="name" name="last" type="text" placeholder="<%= sessionUser.name.last %>" value="<%= sessionUser.name.last %>">
 
                 <label for="email">Email</label>
                 <input id="email" name="email" type="email" placeholder="<%= sessionUser.email %>">
@@ -45,18 +45,18 @@
                 <label class="radio"><input type="radio" name="sex" value="female"  <%= sessionUser.preference.sex === 'female' ? 'checked' : '' %>>Vrouw</label>
 
                 <label for="preference">Tussen welke leeftijd?</label>
-                <input type="number" name="ageMin" placeholder="<%= sessionUser.preference.ageMin %>" min="18">en
-                <input type="number" max="110" name="ageMax" placeholder="<%= sessionUser.preference.ageMax %>">
+                <input type="number" name="ageMin" placeholder="<%= sessionUser.preference.ageMin %>" min="18" value="<%= sessionUser.preference.ageMin %>">en
+                <input type="number" max="110" name="ageMax" placeholder="<%= sessionUser.preference.ageMax %>" value="<%= sessionUser.preference.ageMax %>">
             </fieldset>
 
             <fieldset>
                 <h3>Maak het persoonlijker</h3>
 
                 <label for="study">Wat studeer je?</label>
-                <input id="study" name="study" type="text" placeholder="<%= sessionUser.info.study %>">
+                <input id="study" name="study" type="text" value="<%= sessionUser.info.study %>">
 
                 <label for="work">Waar werk je?</label>
-                <input id="work" name="work" type="text" placeholder="<%= sessionUser.info.work %>">
+                <input id="work" name="work" type="text" value="<%= sessionUser.info.work %>">
             </fieldset>
 
             <fieldset>
@@ -71,7 +71,7 @@
 
             <fieldset>
                 <h3>Wil je nog wat kwijt over jezelf?</h3>
-                <textarea name="additional" name="additional" cols="40" rows="5" placeholder="<%= sessionUser.info.additional %>"></textarea>
+                <textarea name="additional" name="additional" cols="40" rows="5" valje="<%= sessionUser.info.additional %>"></textarea>
             </fieldset>
 
             <fieldset>

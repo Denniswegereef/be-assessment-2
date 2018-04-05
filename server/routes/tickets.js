@@ -80,6 +80,10 @@ function checkTicket(user, potential, callback) {
     }
 }
 
+function getAllTickets(user) {
+
+}
+
 module.exports = {
     render: render,
     send: sendTicket,

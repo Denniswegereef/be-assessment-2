@@ -2,3 +2,5 @@ node_modules/
 .idea
 .env
 db/
+src/images/users/
+!src/images/users/profile-placeholder.jpg

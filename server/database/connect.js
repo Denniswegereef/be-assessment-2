@@ -3,6 +3,7 @@ const chalk = require('chalk')
 const timestamp = require('time-stamp')
 const argon2 = require('argon2')
 const mime = require('mime-types')
+const schema = require('../utils/user-schema')
 
 let db = null
 const url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT
@@ -72,73 +73,41 @@ function register(req, callback) {
         return
     }
 
-    const user = {
-        user: input.first + ' ' + input.last,
-        name: {
-            first: input.first,
-            last: input.last
-        },
-        email: input.email,
-        password: input.password,
-        info: {
-            age: input.age,
-            gender: input.gender,
-            place: input.place,
-            study: input.study ? input.study : null,
-            work: input.work ? input.work : null,
-            additional: input.additional,
-            image: input.file ? input.file.filename : null,
-            accountCreated: timestamp('DD/MM/YYYY-HH:mm:ss')
-        },
-        preference: {
-            sex: input.sex,
-            ageMin: Number(input.ageMin),
-            ageMax: Number(input.ageMax),
-        },
-        movies: [
-            {
-                name: input.movieOne
-            },
-            {
-                name: input.movieTwo
-            }
-        ],
-        ticket: null,
-        denied: null,
-        matched: null,
-        blocked: null
-    }
-
-
     const min = 8
     const max = 160
 
-    if (input.password.length < min || input.password.length > max) {
+    if (req.body.password.length < min || input.password.length > max) {
         console.log('Password must be between ' + min +
             ' and ' + max + ' characters')
         return
     }
 
-    argon2.hash(user.password).then(function (hash) {
-        user.password = hash
-        const dbUsers = db.collection('users')
+    argon2.hash(input.password).then(function (hash) {
+        input.password = hash
 
-        dbUsers.insertOne(user, function (error, response) {
-            if (error) {
-                console.log('Error occurred while inserting')
-                // return
-            } else {
-                req.session.user = user
-                console.log(chalk.yellow('User created ' + user.user))
-                return callback(response)
-            }
-        })
+        schema.user(input, null, done)
+
+        function done(user) {
+            user.info.accountCreated = timestamp('DD/MM/YYYY-HH:mm:ss')
+
+            const dbUsers = db.collection('users')
+
+            dbUsers.insertOne(user, function (error, response) {
+                if (error) {
+                    console.log('Error occurred while inserting')
+                    // return
+                } else {
+                    req.session.user = user
+                    console.log(chalk.yellow('User created ' + user.user))
+                    return callback(response)
+                }
+            })
+        }
 
     }).catch(function (err) {
         console.log(err)
     })
 }
-
 
 module.exports = {
     login: login,

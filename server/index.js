@@ -58,7 +58,7 @@ app.use('/images', express.static('src/images'))
 
 .get('/account', account.render)
 .get('/account-change', account.change)
-.post('/accountChange', account.update)
+.post('/accountChange', upload.single('cover'), account.update)
 
 .get('/chats', chats.render)
 

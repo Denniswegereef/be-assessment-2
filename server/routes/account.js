@@ -32,10 +32,15 @@ function accountUpdate(req, res) {
         error: []
     }
 
+    req.body.file = req.file
+
     db.update(req.body, data.sessionUser, done)
 
     function done(item) {
-        res.status(200).render('dashboard/account-change.ejs', data)
+        req.session.user = item
+        data.sessionUser = req.session.user
+        console.log(item)
+        res.status(200).render('dashboard/account.ejs', data)
     }
 
 }
@@ -45,3 +50,4 @@ module.exports = {
     change: accountChange,
     update: accountUpdate
 }
+

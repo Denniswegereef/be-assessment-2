@@ -30,6 +30,7 @@ function render(req, res) {
             data.data = user
 
             ticket.check(userID, user, done)
+
             function done(ticket) {
                 data.ticket = ticket
                 res.status(200).render('dashboard/user.ejs', data)
