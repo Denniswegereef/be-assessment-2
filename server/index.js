@@ -55,6 +55,7 @@ app.use('/images', express.static('src/images'))
 
 .get('/tickets', tickets.render)
 .get('/user/:id/sendTicket', tickets.send)
+.get('/remove/:id', connect.remove)
 
 .get('/account', account.render)
 .get('/account-change', account.change)

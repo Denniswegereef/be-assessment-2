@@ -84,11 +84,11 @@ function register(req, callback) {
 
     argon2.hash(input.password).then(function (hash) {
         input.password = hash
+        input.accountCreated = timestamp('DD/MM/YYYY-HH:mm:ss')
 
         schema.user(input, null, done)
 
         function done(user) {
-            user.info.accountCreated = timestamp('DD/MM/YYYY-HH:mm:ss')
 
             const dbUsers = db.collection('users')
 
@@ -109,9 +109,42 @@ function register(req, callback) {
     })
 }
 
+function removeUser(req, res) {
+    const data = {
+        sessionUser: req.session.user,
+        data: [],
+        error: []
+    }
+
+    if(req.params.id === data.sessionUser._id) {
+        const userID = new mongo.ObjectID(data.sessionUser._id)
+        const collection = db.collection('users')
+
+        collection.remove({
+            _id: userID
+        }, function (err, result) {
+            if(err){
+                console.log(chalk.red('Something going wrong with deleting'))
+            } else {
+                console.log(chalk.blue('Deleted user'))
+                logout(req,res)
+                res.redirect('/')
+            }
+        })
+    } else {
+        data.error = {
+            status: 405,
+            text: 'Method not authorized'
+        }
+        res.render('front/error.erjs', data)
+    }
+
+}
+
 module.exports = {
     login: login,
     logout: logout,
-    register: register
+    register: register,
+    remove: removeUser
 }
 

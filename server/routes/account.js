@@ -39,6 +39,7 @@ function accountUpdate(req, res) {
     function done(item) {
         req.session.user = item
         data.sessionUser = req.session.user
+
         console.log(item)
         res.status(200).render('dashboard/account.ejs', data)
     }

@@ -19,7 +19,7 @@ function userSchema(input, session, callback) {
                 additional: input.additional,
                 image: input.file ? input.file.filename : null,
                 lastUpdated: timestamp('DD/MM/YYYY-HH:mm:ss'),
-                accountCreated: input.accountCreated ? session.info.accountCreated : undefined
+                accountCreated: input.accountCreated ? input.accountCreated : session.info.accountCreated
             },
             preference: {
                 sex: input.sex ? input.sex : session.preference.sex,
