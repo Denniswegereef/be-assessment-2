@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="099840d4-934f-4ecf-ace6-a274a24e6f49" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -15,7 +16,42 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="register.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/routes/register.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="387">
+              <caret line="29" column="20" lean-forward="true" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="578">
+                <caret line="245" column="17" lean-forward="false" selection-start-line="245" selection-start-column="10" selection-end-line="245" selection-end-column="17" />
+                <folding>
+                  <marker date="1523116825996" expanded="true" signature="3221:3330" ph="{...}" />
+                  <marker date="1523116825996" expanded="true" signature="6278:6962" ph="{&quot;email&quot;: 'email@email.nl'...}" />
+                  <marker date="1523116825996" expanded="true" signature="6278:7321" ph="{&quot;email&quot;: 'email@email.nl'...}" />
+                  <marker date="1523116825996" expanded="true" signature="6335:6416" ph="{&quot;first&quot;: 'Dennis'...}" />
+                  <marker date="1523116825996" expanded="true" signature="6514:6962" ph="{&quot;age&quot;: '18'...}" />
+                  <marker date="1523116825996" expanded="true" signature="6515:6962" ph="{&quot;study&quot;: input.study...}" />
+                  <marker date="1523116825996" expanded="true" signature="6988:7089" ph="{...}" />
+                  <marker date="1523116825996" expanded="true" signature="7111:7283" ph="[...]" />
+                  <marker date="1523116825996" expanded="true" signature="7129:7194" ph="{...}" />
+                  <marker date="1523116825996" expanded="true" signature="7212:7269" ph="{...}" />
+                </folding>
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -88,7 +124,6 @@
         <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/server/database/user.js" />
         <option value="$PROJECT_DIR$/server/routes/home.js" />
-        <option value="$PROJECT_DIR$/server/routes/register.js" />
         <option value="$PROJECT_DIR$/server/routes/tickets.js" />
         <option value="$PROJECT_DIR$/server/utils/match-system.js" />
         <option value="$PROJECT_DIR$/server/utils/user-schema.js" />
@@ -96,12 +131,13 @@
         <option value="$PROJECT_DIR$/server/routes/dashboard.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/server/database/connect.js" />
         <option value="$PROJECT_DIR$/server/routes/account.js" />
         <option value="$PROJECT_DIR$/server/routes/chats.js" />
         <option value="$PROJECT_DIR$/server/routes/notfound.js" />
         <option value="$PROJECT_DIR$/server/routes/user.js" />
+        <option value="$PROJECT_DIR$/server/routes/register.js" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -286,12 +322,12 @@
       <workItem from="1522910105236" duration="9218000" />
       <workItem from="1522924031774" duration="14145000" />
       <workItem from="1523089339142" duration="10612000" />
-      <workItem from="1523116062633" duration="497000" />
+      <workItem from="1523116062633" duration="762000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151688000" />
+    <option name="totallyTimeSpent" value="151953000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -304,6 +340,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="8" y="22" width="1600" height="1028" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13172895" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.4977834" order="6" side_tool="false" content_ui="tabs" />
@@ -312,7 +349,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.4977834" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24982981" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2454448" sideWeight="0.7682077" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2454448" sideWeight="0.7682077" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -616,6 +653,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="751">
           <caret line="76" column="10" lean-forward="false" selection-start-line="76" selection-start-column="4" selection-end-line="76" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -662,28 +700,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="208">
-            <caret line="68" column="2" lean-forward="false" selection-start-line="68" selection-start-column="2" selection-end-line="68" selection-end-column="2" />
-            <folding>
-              <marker date="1523115037376" expanded="true" signature="3221:3330" ph="{...}" />
-              <marker date="1523115037376" expanded="true" signature="6278:6962" ph="{&quot;email&quot;: 'email@email.nl'...}" />
-              <marker date="1523115037376" expanded="true" signature="6278:7321" ph="{&quot;email&quot;: 'email@email.nl'...}" />
-              <marker date="1523115037376" expanded="true" signature="6335:6416" ph="{&quot;first&quot;: 'Dennis'...}" />
-              <marker date="1523115037376" expanded="true" signature="6514:6962" ph="{&quot;age&quot;: '18'...}" />
-              <marker date="1523115037376" expanded="true" signature="6515:6962" ph="{&quot;study&quot;: input.study...}" />
-              <marker date="1523115037376" expanded="true" signature="6988:7089" ph="{...}" />
-              <marker date="1523115037376" expanded="true" signature="7111:7283" ph="[...]" />
-              <marker date="1523115037376" expanded="true" signature="7129:7194" ph="{...}" />
-              <marker date="1523115037376" expanded="true" signature="7212:7269" ph="{...}" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/utils/match-system.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -719,14 +735,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -768,6 +776,36 @@
         <state relative-caret-position="240">
           <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="29" column="20" lean-forward="true" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="578">
+            <caret line="245" column="17" lean-forward="false" selection-start-line="245" selection-start-column="10" selection-end-line="245" selection-end-column="17" />
+            <folding>
+              <marker date="1523116825996" expanded="true" signature="3221:3330" ph="{...}" />
+              <marker date="1523116825996" expanded="true" signature="6278:6962" ph="{&quot;email&quot;: 'email@email.nl'...}" />
+              <marker date="1523116825996" expanded="true" signature="6278:7321" ph="{&quot;email&quot;: 'email@email.nl'...}" />
+              <marker date="1523116825996" expanded="true" signature="6335:6416" ph="{&quot;first&quot;: 'Dennis'...}" />
+              <marker date="1523116825996" expanded="true" signature="6514:6962" ph="{&quot;age&quot;: '18'...}" />
+              <marker date="1523116825996" expanded="true" signature="6515:6962" ph="{&quot;study&quot;: input.study...}" />
+              <marker date="1523116825996" expanded="true" signature="6988:7089" ph="{...}" />
+              <marker date="1523116825996" expanded="true" signature="7111:7283" ph="[...]" />
+              <marker date="1523116825996" expanded="true" signature="7129:7194" ph="{...}" />
+              <marker date="1523116825996" expanded="true" signature="7212:7269" ph="{...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

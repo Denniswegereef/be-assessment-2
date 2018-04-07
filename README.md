@@ -241,5 +241,9 @@ But when I look back on everything I've made I'm still very disappointed with th
 
 For now I'm happy with the result that I can show at the assignment and made *a-lot* of progress!
 
+## License
+
+[MIT](LICENSE)
+
 
   
