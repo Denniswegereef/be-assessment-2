@@ -1,6 +1,5 @@
 const argon2 = require('argon2'),
-    db = require('../database/connect'),
-    chalk = require('chalk')
+    db = require('../database/connect')
 
 function render(req, res) {
     const data = {

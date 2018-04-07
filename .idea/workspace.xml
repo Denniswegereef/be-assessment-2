@@ -3,14 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="099840d4-934f-4ecf-ace6-a274a24e6f49" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/database/connect.js" afterPath="$PROJECT_DIR$/server/database/connect.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/account.js" afterPath="$PROJECT_DIR$/server/routes/account.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/chats.js" afterPath="$PROJECT_DIR$/server/routes/chats.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/home.js" afterPath="$PROJECT_DIR$/server/routes/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/login.js" afterPath="$PROJECT_DIR$/server/routes/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/register.js" afterPath="$PROJECT_DIR$/server/routes/register.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/tickets.js" afterPath="$PROJECT_DIR$/server/routes/tickets.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,18 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="connect.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/database/connect.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="35" column="16" lean-forward="true" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -61,6 +42,7 @@
       <find>var</find>
       <find>VAR</find>
       <find>as last</find>
+      <find>res.render</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -85,7 +67,6 @@
         <option value="$PROJECT_DIR$/src/view/component/footer.ejs" />
         <option value="$PROJECT_DIR$/src/scss/item/container.scss" />
         <option value="$PROJECT_DIR$/src/scss/component/user-profile.scss" />
-        <option value="$PROJECT_DIR$/server/routes/notfound.js" />
         <option value="$PROJECT_DIR$/server/routes/login.js" />
         <option value="$PROJECT_DIR$/src/view/front/error.ejs" />
         <option value="$PROJECT_DIR$/src/view/dashboard/user-change.ejs" />
@@ -93,7 +74,6 @@
         <option value="$PROJECT_DIR$/src/view/component/header.ejs" />
         <option value="$PROJECT_DIR$/src/scss/component/user-card.scss" />
         <option value="$PROJECT_DIR$/src/scss/main.scss" />
-        <option value="$PROJECT_DIR$/server/routes/chats.js" />
         <option value="$PROJECT_DIR$/src/scss/component/dashboard.scss" />
         <option value="$PROJECT_DIR$/src/view/dashboard/dashboard.ejs" />
         <option value="$PROJECT_DIR$/src/view/dashboard/tickets.ejs" />
@@ -104,13 +84,11 @@
         <option value="$PROJECT_DIR$/src/view/front/register.ejs" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/view/dashboard/account.ejs" />
-        <option value="$PROJECT_DIR$/server/routes/account.js" />
         <option value="$PROJECT_DIR$/src/view/dashboard/account-change.ejs" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/server/database/user.js" />
         <option value="$PROJECT_DIR$/server/routes/home.js" />
         <option value="$PROJECT_DIR$/server/routes/register.js" />
-        <option value="$PROJECT_DIR$/server/routes/user.js" />
         <option value="$PROJECT_DIR$/server/routes/tickets.js" />
         <option value="$PROJECT_DIR$/server/utils/match-system.js" />
         <option value="$PROJECT_DIR$/server/utils/user-schema.js" />
@@ -120,6 +98,10 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/server/database/connect.js" />
+        <option value="$PROJECT_DIR$/server/routes/account.js" />
+        <option value="$PROJECT_DIR$/server/routes/chats.js" />
+        <option value="$PROJECT_DIR$/server/routes/notfound.js" />
+        <option value="$PROJECT_DIR$/server/routes/user.js" />
       </list>
     </option>
   </component>
@@ -304,12 +286,12 @@
       <workItem from="1522910105236" duration="9218000" />
       <workItem from="1522924031774" duration="14145000" />
       <workItem from="1523089339142" duration="10612000" />
-      <workItem from="1523116062633" duration="185000" />
+      <workItem from="1523116062633" duration="497000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151376000" />
+    <option name="totallyTimeSpent" value="151688000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -330,7 +312,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.4977834" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24982981" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2454448" sideWeight="0.7682077" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2454448" sideWeight="0.7682077" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -630,41 +612,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/chats.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="1" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/notfound.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="1" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/database/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="751">
           <caret line="76" column="10" lean-forward="false" selection-start-line="76" selection-start-column="4" selection-end-line="76" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -679,37 +630,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="41" lean-forward="true" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/tickets.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="72" column="13" lean-forward="false" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/account.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="36" column="47" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -764,13 +684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/utils/match-system.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -778,10 +691,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/account.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="6" lean-forward="false" selection-start-line="25" selection-start-column="4" selection-end-line="31" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/database/connect.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
+        <state relative-caret-position="525">
           <caret line="35" column="16" lean-forward="true" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="618">
+          <caret line="49" column="18" lean-forward="true" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/tickets.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/notfound.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="17" lean-forward="true" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="31" lean-forward="true" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="55" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="19" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/chats.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
           <folding />
         </state>
       </provider>
