@@ -23,31 +23,31 @@ function render(req, res) {
 
 function sendTicket(req, res) {
     const data = {
-            sessionUser: req.session.user,
-            data: [],
-            error: []
-        }
+        sessionUser: req.session.user,
+        data: [],
+        error: []
+    }
 
-        // Different kind of status
-        // pending / denied / accepted
+    // Different kind of status
+    // pending / denied / accepted
 
-        const ticket = {
-            sender: null,
-            receiver: null,
-            status: 'send',
-            created: null
-        }
+    const ticket = {
+        sender: null,
+        receiver: null,
+        status: 'send',
+        created: null
+    }
 
-        try {
-            const collection = db.collection('tickets')
+    try {
+        const collection = db.collection('tickets')
 
-            ticket.sender = new mongo.ObjectID(data.sessionUser._id)
-            ticket.receiver = new mongo.ObjectID(req.params.id)
-            ticket.created = timestamp('DD/MM/YYYY-HH:mm:ss')
+        ticket.sender = new mongo.ObjectID(data.sessionUser._id)
+        ticket.receiver = new mongo.ObjectID(req.params.id)
+        ticket.created = timestamp('DD/MM/YYYY-HH:mm:ss')
 
-            collection.insert(ticket)
+        collection.insert(ticket)
 
-            console.log(chalk.green('Sended a ticket for ' + data.sessionUser.user))
+        console.log(chalk.green('Sended a ticket for ' + data.sessionUser.user))
 
     } catch (err) {
         data.error = {

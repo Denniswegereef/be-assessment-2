@@ -26,7 +26,7 @@ function user(req, res) {
 
     function done(user) {
         try {
-            if(!user) {
+            if (!user) {
                 res.redirect('/')
             } else {
                 res.redirect('/dashboard')

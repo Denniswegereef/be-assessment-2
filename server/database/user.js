@@ -71,7 +71,6 @@ function updateUser(input, session, callback) {
 }
 
 
-
 module.exports = {
     findAll: findAll,
     find: findUser,

@@ -4,7 +4,6 @@ const db = require('../database/user'),
     ticket = require('../routes/tickets')
 
 
-
 function render(req, res) {
     const data = {
         sessionUser: req.session.user,
@@ -14,7 +13,7 @@ function render(req, res) {
 
     const checkObjectID = new RegExp("^[0-9a-fA-F]{24}$") // Thanks https://stackoverflow.com/questions/11985228/mongodb-node-check-if-objectid-is-valid
 
-    if (!checkObjectID.test(req.params.id)){
+    if (!checkObjectID.test(req.params.id)) {
         console.log(chalk.red('No user found with slug ' + req.params.id))
         data.error = {
             status: 400,

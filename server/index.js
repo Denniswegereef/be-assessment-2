@@ -38,6 +38,7 @@ const app = express()
     saveUninitialized: true,
     secret: process.env.SESSION_SECRET
 }))
+
 app.use('/images', express.static('src/images'))
 
 .get('/', home.render)

@@ -16,7 +16,7 @@ function matchsystem(currentUser, potential, callback) {
             }
         }
     })
-    console.log(chalk.magenta('Found ' + matches.length + ' matches for ' + currentUser.user ))
+    console.log(chalk.magenta('Found ' + matches.length + ' matches for ' + currentUser.user))
     return callback(matches)
 }
 

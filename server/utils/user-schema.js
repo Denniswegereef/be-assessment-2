@@ -5,7 +5,7 @@ function userSchema(input, session, callback) {
     try {
         const user = {
             name: {
-                first: input.first ?  input.first : session.name.first,
+                first: input.first ? input.first : session.name.first,
                 last: input.last ? input.last : session.name.last
             },
             email: input.email ? input.email : session.email,

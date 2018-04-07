@@ -5,7 +5,7 @@ function home(req, res, next) {
         error: []
     }
 
-    if(!req.session.user){
+    if (!req.session.user) {
         res.render('index.ejs', data)
     } else {
         res.redirect('./dashboard')
