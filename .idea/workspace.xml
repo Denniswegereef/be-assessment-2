@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="099840d4-934f-4ecf-ace6-a274a24e6f49" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/database/connect.js" afterPath="$PROJECT_DIR$/server/database/connect.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/database/user.js" afterPath="$PROJECT_DIR$/server/database/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/index.js" afterPath="$PROJECT_DIR$/server/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/home.js" afterPath="$PROJECT_DIR$/server/routes/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/register.js" afterPath="$PROJECT_DIR$/server/routes/register.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/tickets.js" afterPath="$PROJECT_DIR$/server/routes/tickets.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/user.js" afterPath="$PROJECT_DIR$/server/routes/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/utils/match-system.js" afterPath="$PROJECT_DIR$/server/utils/match-system.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/utils/user-schema.js" afterPath="$PROJECT_DIR$/server/utils/user-schema.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -275,12 +266,12 @@
       <workItem from="1522786763006" duration="1291000" />
       <workItem from="1522910105236" duration="9218000" />
       <workItem from="1522924031774" duration="14145000" />
-      <workItem from="1523089339142" duration="203000" />
+      <workItem from="1523089339142" duration="404000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140782000" />
+    <option name="totallyTimeSpent" value="140983000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

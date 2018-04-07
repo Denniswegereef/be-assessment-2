@@ -1,4 +1,4 @@
-# Dating-app
+# be-assessment-2
 
 To install
 `npm install`
