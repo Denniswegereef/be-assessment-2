@@ -173,6 +173,11 @@ p span {
   padding: 0 50px;
 }
 
+.indexPage img {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
 a {
   text-decoration: none;
   color: black;

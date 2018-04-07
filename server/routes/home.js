@@ -1,4 +1,8 @@
-function home(req, res, next) {
+const database = require('../database/user')
+
+    function
+home(req, res, next)
+{
     const data = {
         sessionUser: req.session.user,
         data: [],
@@ -6,7 +10,14 @@ function home(req, res, next) {
     }
 
     if (!req.session.user) {
-        res.status(403).render('index.ejs', data)
+
+        database.findAll(done)
+
+        function done(users) {
+            data.data = users.length
+            res.render('index.ejs', data)
+        }
+
     } else {
         res.redirect('./dashboard')
     }

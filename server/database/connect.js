@@ -98,7 +98,6 @@ function register(req, callback) {
         if (err) {
         } else {
             console.log(chalk.red('User with email already exists'))
-            return callback(false)
         }
     }
 
@@ -117,7 +116,7 @@ function register(req, callback) {
                 } else {
                     req.session.user = user
                     console.log(chalk.yellow('User created ' + user.user))
-                    return callback(response)
+                    return callback(user)
                 }
             })
         }
