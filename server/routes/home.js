@@ -6,7 +6,7 @@ function home(req, res, next) {
     }
 
     if (!req.session.user) {
-        res.render('index.ejs', data)
+        res.status(403).render('index.ejs', data)
     } else {
         res.redirect('./dashboard')
     }

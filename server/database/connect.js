@@ -110,7 +110,6 @@ function register(req, callback) {
 
         function done(user) {
 
-
             dbUsers.insertOne(user, function (error, response) {
                 if (error) {
                     console.log('Error occurred while inserting')
@@ -155,7 +154,7 @@ function removeUser(req, res) {
             status: 405,
             text: 'Method not authorized'
         }
-        res.render('front/error.ejs', data)
+        res.status(405).render('front/error.ejs', data)
     }
 }
 

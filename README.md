@@ -66,7 +66,7 @@ SESSION_SECRET=thisisstillasecret
 " >> .env
 ```
 
-As last we have to build our project with
+At last we have to build our project with
 ```bash
 npm install
 gulp

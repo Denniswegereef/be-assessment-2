@@ -4,6 +4,10 @@ function notFound(req, res) {
         data: [],
         error: []
     }
+    data.error = {
+        status: 404,
+        text: 'Page not found'
+    }
     res.status(404).render("front/error.ejs", data)
 }
 

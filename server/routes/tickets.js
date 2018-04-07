@@ -18,7 +18,7 @@ function render(req, res) {
         error: []
     }
 
-    res.render('dashboard/tickets.ejs', data)
+    res.status(200).render('dashboard/tickets.ejs', data)
 }
 
 function sendTicket(req, res) {

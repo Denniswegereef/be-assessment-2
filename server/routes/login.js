@@ -4,7 +4,7 @@ function login(req, res) {
         data: [],
         error: []
     }
-    res.render('front/log-in.ejs', data)
+    res.status(200).render('front/log-in.ejs', data)
 }
 
 module.exports = {

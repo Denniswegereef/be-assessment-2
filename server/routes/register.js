@@ -9,7 +9,7 @@ function render(req, res) {
         error: []
     }
 
-    res.render('front/register.ejs', data)
+    res.status(200).render('front/register.ejs', data)
 }
 
 // Register the user

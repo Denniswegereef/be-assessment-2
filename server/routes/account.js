@@ -9,7 +9,7 @@ function accountRender(req, res) {
 
     if (!req.session.user) {
 
-        res.render('front/error.ejs', data)
+        res.status(404).render('front/error.ejs', data)
         return
     }
 
@@ -22,7 +22,16 @@ function accountChange(req, res) {
         data: [],
         error: []
     }
-    res.status(200).render('dashboard/account-change.ejs', data)
+
+    if(!data.sessionUser) {
+        data.error = {
+            status: 401,
+            text: 'No authorization for this page'
+        }
+        res.status(401).render('front/error.ejs', data)
+    } else {
+        res.status(200).render('dashboard/account-change.ejs', data)
+    }
 }
 
 function accountUpdate(req, res) {
