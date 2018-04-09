@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="099840d4-934f-4ecf-ace6-a274a24e6f49" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/database/connect.js" afterPath="$PROJECT_DIR$/server/database/connect.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -47,12 +46,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="connect.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="connect.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/database/connect.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="233">
-              <caret line="102" column="0" lean-forward="true" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+              <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="3675">
+                <caret line="245" column="0" lean-forward="false" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
+                <folding>
+                  <marker date="1523116870543" expanded="true" signature="3221:3330" ph="{...}" />
+                  <marker date="1523116870543" expanded="true" signature="6278:6962" ph="{&quot;email&quot;: 'email@email.nl'...}" />
+                  <marker date="1523116870543" expanded="true" signature="6278:7321" ph="{&quot;email&quot;: 'email@email.nl'...}" />
+                  <marker date="1523116870543" expanded="true" signature="6335:6416" ph="{&quot;first&quot;: 'Dennis'...}" />
+                  <marker date="1523116870543" expanded="true" signature="6514:6962" ph="{&quot;age&quot;: '18'...}" />
+                  <marker date="1523116870543" expanded="true" signature="6515:6962" ph="{&quot;study&quot;: input.study...}" />
+                  <marker date="1523116870543" expanded="true" signature="6988:7089" ph="{...}" />
+                  <marker date="1523116870543" expanded="true" signature="7111:7283" ph="[...]" />
+                  <marker date="1523116870543" expanded="true" signature="7129:7194" ph="{...}" />
+                  <marker date="1523116870543" expanded="true" signature="7212:7269" ph="{...}" />
+                </folding>
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -302,19 +325,19 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/images/users" />
+      <recent name="$PROJECT_DIR$/src/scss/item" />
+      <recent name="$PROJECT_DIR$/src/view/front" />
+      <recent name="$PROJECT_DIR$/src/view/component" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/server/utils" />
       <recent name="$PROJECT_DIR$/server/routes" />
       <recent name="$PROJECT_DIR$/src/view/dashboard" />
       <recent name="$PROJECT_DIR$/src/scss/component" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/images/users" />
-      <recent name="$PROJECT_DIR$/src/scss/item" />
-      <recent name="$PROJECT_DIR$/src/view/front" />
-      <recent name="$PROJECT_DIR$/src/view/component" />
-      <recent name="$PROJECT_DIR$/src/view" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -377,12 +400,12 @@
       <workItem from="1522924031774" duration="14145000" />
       <workItem from="1523089339142" duration="10612000" />
       <workItem from="1523116062633" duration="4260000" />
-      <workItem from="1523272624318" duration="490000" />
+      <workItem from="1523272624318" duration="541000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155941000" />
+    <option name="totallyTimeSpent" value="155992000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -653,16 +676,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="578">
-            <caret line="245" column="0" lean-forward="false" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -851,8 +864,30 @@
     <entry file="file://$PROJECT_DIR$/server/database/connect.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
-          <caret line="102" column="0" lean-forward="true" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="3675">
+            <caret line="245" column="0" lean-forward="false" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
+            <folding>
+              <marker date="1523116870543" expanded="true" signature="3221:3330" ph="{...}" />
+              <marker date="1523116870543" expanded="true" signature="6278:6962" ph="{&quot;email&quot;: 'email@email.nl'...}" />
+              <marker date="1523116870543" expanded="true" signature="6278:7321" ph="{&quot;email&quot;: 'email@email.nl'...}" />
+              <marker date="1523116870543" expanded="true" signature="6335:6416" ph="{&quot;first&quot;: 'Dennis'...}" />
+              <marker date="1523116870543" expanded="true" signature="6514:6962" ph="{&quot;age&quot;: '18'...}" />
+              <marker date="1523116870543" expanded="true" signature="6515:6962" ph="{&quot;study&quot;: input.study...}" />
+              <marker date="1523116870543" expanded="true" signature="6988:7089" ph="{...}" />
+              <marker date="1523116870543" expanded="true" signature="7111:7283" ph="[...]" />
+              <marker date="1523116870543" expanded="true" signature="7129:7194" ph="{...}" />
+              <marker date="1523116870543" expanded="true" signature="7212:7269" ph="{...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
