@@ -97,7 +97,7 @@ function register(req, callback) {
     function checkUser(err, result) {
         if (err) {
         } else {
-            console.log(chalk.red('User with email already exists'))
+            // console.log(chalk.red('User with email already exists'))
         }
     }
 
