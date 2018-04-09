@@ -8,7 +8,7 @@ _Table of content_
 - [To-do list](#to-do-list)
 - [Personal opinion](#personal-opinion)
 
-[screenshot](screen.png)
+![screenshot](screen.png)
 
 ## Movie dating
 
