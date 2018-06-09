@@ -43,7 +43,6 @@ function onremove(ev) {
   }
 
   function onload() {
-    console.log('fucked')
     window.location = '/'
   }
 

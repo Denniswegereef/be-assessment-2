@@ -309,6 +309,10 @@ footer {
   }
 }
 
+.user-card {
+  transition: all .3s;
+}
+
 .user-card img {
   width: 100%;
 }
@@ -401,4 +405,14 @@ body {
   height: 100%;
   width: 100%;
   background-color: red;
+}
+
+.searchBar {
+  margin-top: 3rem;
+  display: flex;
+}
+
+.searchBar input {
+  margin-left: 1rem;
+  width: 200px;
 }

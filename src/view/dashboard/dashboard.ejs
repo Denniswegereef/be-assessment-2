@@ -10,10 +10,13 @@
             <li><a href="chats">Gesprekken</a></li>
             <li class="tickets"><a href="tickets">Tickets</a></li>
         </ul>
+        <div class="searchBar">
+        <label for="searchItem">Zoek matches</label><input type="text" id="searchItem">
+        </div>
     </div>
     <section class="dashboard">
         <% data.forEach(function (match) { %>
-        <a href="user/<%= match._id %>" class="user-card">
+        <a href="user/<%= match._id %>" class="user-card" id="<%= match.user.toLowerCase() %>">
             <article>
                 <% if (match.info.image){ %>
                 <img src="images/users/<%= match.info.image %>" alt="">
@@ -37,6 +40,6 @@
 </main>
 
 <script src="main.js"></script>
+<script src="searchmatch.js"></script>
 
 <%- include('../component/footer.ejs'); %>
-
