@@ -19,3 +19,15 @@
 
 
 @import "_standard/fonts.scss";
+
+#safemeter {
+  height: 10px;
+  width: 200px;
+  margin-bottom: .3rem;
+  #safebar {
+    transition: all .2s;
+    height: 100%;
+    width: 100%;
+    background-color: red;
+  }
+}

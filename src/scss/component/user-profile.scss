@@ -1,5 +1,5 @@
 .user-profile {
-  max-width: 400px;
+  max-width: 500px;
   margin: 50px auto;
   display: flex;
   flex-direction: column;
@@ -10,7 +10,7 @@
       max-height: 400px;
       overflow: hidden;
       max-width: 400px;
-      height: 100%;
+      width: 100%;
     }
     h2 {
       font-weight: bold;

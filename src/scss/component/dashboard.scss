@@ -6,9 +6,16 @@
     right: 0;
     top: 0;
     display: flex;
+    @media (max-width: 800px) {
+      position: relative;
+    }
     li {
       margin-left: 1rem;
       font-size: 1.5em;
+      @media (max-width: 800px) {
+        margin-left: 0;
+        margin-right: 1rem;
+      }
       a {
         text-decoration: underline;
         &:hover {
@@ -25,4 +32,10 @@
   grid-row-gap: 50px;
   grid-template-columns: 1fr 1fr 1fr;
   margin: 50px 0;
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 420px) {
+    grid-template-columns: 1fr;
+  }
 }

@@ -6,11 +6,11 @@
     <form action="/registerUser" method="post" enctype="multipart/form-data">
 
         <fieldset>
-            <label for="name">Voornaam</label>
-            <input id="name" name="first" type="text" placeholder="Voornaam" required>
+            <label for="nameone">Voornaam</label>
+            <input id="nameone" name="first" type="text" placeholder="Voornaam" required>
 
-            <label for="name">Achternaam</label>
-            <input id="name" name="last" type="text" placeholder="Achternaam" required>
+            <label for="nametwo">Achternaam</label>
+            <input id="nametwo" name="last" type="text" placeholder="Achternaam" required>
 
             <label for="email">Email</label>
             <input id="email" name="email" type="email" placeholder="naam@email.nl" required>
@@ -22,6 +22,11 @@
 
             <label for="passwordAgain">Herhaal wachtwoord</label>
             <input type="password" id="passwordAgain" name="passwordAgain" placeholder="Herhaal wachtwoord" required>
+
+            <div id="safemeter">
+              <div id="safebar"></div>
+            </div>
+            <p id="safetext">safetext</p>
         </fieldset>
 
         <fieldset>
@@ -64,9 +69,9 @@
             <p>Dit wordt gebruikt om onze matchmaking machine te gebruiken</p>
 
             <label for="movie">Zoek een film</label>
-            <input id="movie" name="movieOne" type="text" placeholder="Lord of the rings">
+            <input id="movieone" name="movieOne" type="text" placeholder="Lord of the rings">
 
-            <input id="movie" name="movieTwo" type="text" placeholder="Star wars">
+            <input id="movietwo" name="movieTwo" type="text" placeholder="Star wars">
         </fieldset>
 
         <fieldset>
@@ -82,5 +87,7 @@
     </form>
 </main>
 
+
 <%- include('../component/footer.ejs'); %>
 
+<script src="passwordchecker.js"></script>
