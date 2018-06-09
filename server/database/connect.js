@@ -133,6 +133,7 @@ function removeUser(req, res) {
         error: []
     }
 
+    console.log(req.params.id)
     if (req.params.id === data.sessionUser._id) {
         const userID = new mongo.ObjectID(data.sessionUser._id)
         const collection = db.collection('users')
@@ -163,4 +164,3 @@ module.exports = {
     register: register,
     remove: removeUser
 }
-

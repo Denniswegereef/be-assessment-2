@@ -56,7 +56,7 @@ app.use('/images', express.static('src/images'))
 
 .get('/tickets', tickets.render)
 .get('/user/:id/sendTicket', tickets.send)
-.get('/remove/:id', connect.remove)
+.delete('/:id', connect.remove)
 
 .get('/account', account.render)
 .get('/account-change', account.change)
@@ -70,4 +70,3 @@ app.use('/images', express.static('src/images'))
 .get('*', notFound.render)
 
 .listen(8080)
-
