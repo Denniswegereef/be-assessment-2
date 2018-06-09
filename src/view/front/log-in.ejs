@@ -2,6 +2,9 @@
 <%- include('../component/header.ejs'); %>
 <main class="container">
     <h2>Log in</h2>
+    <% if (error) { %>
+    <h3 class="error"><%= error %></h3>
+    <% } %>
     <form action="/loginUser" method="post">
         <fieldset>
             <label for="email">Gebruikersnaam</label>
@@ -17,4 +20,3 @@
 </main>
 
 <%- include('../component/footer.ejs'); %>
-

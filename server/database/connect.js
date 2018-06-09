@@ -15,12 +15,15 @@ mongo.MongoClient.connect(url, function (err, client) {
 
 function login(req, res) {
 
+
+
     const currentUser = req.body.email
     const password = req.body.password
 
     if (!currentUser || !password) {
         // Status 400
         console.log(chalk.red('Username or password are missing'))
+
         return
     }
 
@@ -48,6 +51,12 @@ function login(req, res) {
                 res.redirect('/dashboard')
             } else {
                 console.log(chalk.red('password incorrect'))
+                const data = {
+                    sessionUser: req.session.user,
+                    data: [],
+                    error: 'Password incorrect'
+                }
+                res.status(200).render('front/log-in.ejs', data)
             }
         }
     })
