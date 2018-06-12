@@ -3,11 +3,7 @@ var users = document.getElementsByClassName('user-card')
 
 function findUsers() {
   for (var i = 0; i < users.length; i++) {
-    if (users[i].id.includes(searchItem.value.toLowerCase())) {
-      users[i].style.display = 'block'
-    } else {
-      users[i].style.display = 'none'
-    }
+    users[i].id.includes(searchItem.value.toLowerCase()) ? users[i].style.display = 'block' : users[i].style.display = 'none';
   }
 }
 
