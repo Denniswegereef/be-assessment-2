@@ -48,6 +48,7 @@ app.use('/images', express.static('src/images'))
 
 .get('/register', register.render)
 .post('/registerUser', upload.single('cover'), register.user)
+.post('/:email', register.availableUser)
 
 .get('/dashboard', dashboard.render)
 

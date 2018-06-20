@@ -12,8 +12,9 @@
             <label for="nametwo">Achternaam</label>
             <input id="nametwo" name="last" type="text" placeholder="Achternaam" required>
 
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="naam@email.nl" required>
+            <p id="errorEmailText"></p>
+            <label for="searchEmail">Email</label>
+            <input id="searchEmail" name="email" type="email" placeholder="naam@email.nl" required>
         </fieldset>
 
         <fieldset>
@@ -91,3 +92,4 @@
 <%- include('../component/footer.ejs'); %>
 
 <script src="passwordchecker.js"></script>
+<script src="check-user.js"></script>

@@ -1,4 +1,4 @@
-const mongo = require('mongodb')
+ const mongo = require('mongodb')
 const chalk = require('chalk')
 const schema = require('../utils/user-schema')
 const fs = require('fs')
@@ -76,4 +76,3 @@ module.exports = {
     find: findUser,
     update: updateUser
 }
-

@@ -1,6 +1,15 @@
 const argon2 = require('argon2'),
-    db = require('../database/connect'),
-    chalk = require('chalk')
+    database = require('../database/connect'),
+    chalk = require('chalk'),
+    mongo = require('mongodb')
+
+let db = null
+const url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT
+
+mongo.MongoClient.connect(url, function (err, client) {
+    if (err) throw err
+    return db = client.db(process.env.DB_NAME)
+})
 
 function render(req, res) {
     const data = {
@@ -16,7 +25,7 @@ function render(req, res) {
 function user(req, res) {
     req.body.file = req.file
 
-    db.register(req, done)
+    database.register(req, done)
 
     function done(user) {
         try {
@@ -31,7 +40,31 @@ function user(req, res) {
     }
 }
 
+function availableUser(req, res) {
+  const collection = db.collection('users')
+
+  collection.findOne({
+    "email": req.params.email
+  }, function (err, user) {
+      if (err) {
+        console.log(error)
+      } else {
+        if (user === null) {
+          res.json({
+            message: 'not found'
+          })
+        } else {
+          res.json({
+            message: 'found'
+          })
+        }
+      }
+  })
+
+}
+
 module.exports = {
     render: render,
-    user: user
+    user: user,
+    availableUser: availableUser
 }
