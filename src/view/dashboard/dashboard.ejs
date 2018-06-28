@@ -18,11 +18,13 @@
         <% data.forEach(function (match) { %>
         <a href="user/<%= match._id %>" class="user-card" id="<%= match.user.toLowerCase() %>">
             <article>
+              <div class="imageHolder">
                 <% if (match.info.image){ %>
                 <img src="images/users/<%= match.info.image %>" alt="">
                 <% } else { %>
                 <img src="images/users/profile-placeholder.jpg" alt="">
                 <% } %>
+              </div>
                 <section>
                     <h4><%= match.user %>, <%= match.info.age %></h4>
                     <% if (match.info.study){ %>

@@ -426,3 +426,27 @@ body {
 #errorEmailText {
   margin: 1.5rem 0 1rem .5rem;
 }
+
+.dashboard article {
+  transition: all .1s;
+}
+
+.dashboard article:hover {
+  transform: scale(1.02);
+}
+
+.imageHolder {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageHolder img {
+  position: absolute;
+  height: 100%;
+  width: auto;
+}
